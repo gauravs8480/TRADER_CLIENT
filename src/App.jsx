@@ -9,7 +9,7 @@ import LayoutWrapper from "./uti/LayoutWrapper"; // Adjust path
 
 const App = () => {
   return (
-    <div className="bg-black text-white px-4 min-h-screen ml-0">
+    <div className="">
 
         <HeroSection />
 

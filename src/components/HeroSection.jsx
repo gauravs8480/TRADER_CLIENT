@@ -5,7 +5,9 @@ import NavBar from "../constants/NavBar";
 const HeroSection = () => {
   return (
     <>
-      <NavBar />
+  
+    <NavBar />
+
       <div className="relative w-full h-screen pt-[70px] md:pt-[80px] flex flex-col overflow-hidden">
         {/* Background Video */}
         <video
@@ -71,6 +73,8 @@ const HeroSection = () => {
           <img src={candlestick} alt="Candlestick" className="object-contain" />
         </div>
       </div>
+   
+ 
     </>
   );
 };
