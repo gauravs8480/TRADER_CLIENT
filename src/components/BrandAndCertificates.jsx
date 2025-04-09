@@ -38,13 +38,13 @@ const BrandAndCertificates = () => {
   return (
     <div className="bg-black flex flex-col justify-center items-center gap-y-15 py-45">
       {/* Title */}
-      <div className="text-white text-center text-sm md:text-[20px] font-bold tracking-wide">
+      <div className="text-white    text-center text-sm md:text-[15px] font-semibold tracking-wide">
         FUNDED WITH PROP FIRMS WORLDWIDE
       </div>
 
       {/* Logo Strip */}
       <div
-        className="relative w-[80%] h-20 overflow-hidden flex items-center rounded-lg shadow-2xl" // Increased shadow and opacity
+        className="relative w-[100%] h-20 overflow-hidden flex items-center rounded-lg shadow-2xl" // Increased shadow and opacity
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -59,7 +59,7 @@ const BrandAndCertificates = () => {
               key={index}
               src={item.logo}
               alt={`Brand logo ${item.id || index}`}
-              className="w-20 h-20 object-contain mx-16 brightness-0 invert" // Increased gap to mx-16 (64px total)
+              className="w-20 h-20 object-contain mx-10 brightness-0 invert" // Increased gap to mx-16 (64px total)
             />
           ))}
         </div>

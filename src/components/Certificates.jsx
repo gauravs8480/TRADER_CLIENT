@@ -48,8 +48,8 @@ const Certificates = () => {
     <div className="bg-black text-white py-10 overflow-hidden">
       {/* Heading */}
       <div className="text-center mb-10 px-4 md:px-20">
-        <p className="text-sm lg:text-[20px] font-medium uppercase tracking-widest">LEARN. EXECUTE. WIN.</p>
-        <h1 className="text-4xl md:text-[50px]  font-semibold py-12">
+        <p className="text-sm lg:text-[15px] font-medium uppercase tracking-widest">LEARN. EXECUTE. WIN.</p>
+        <h1 className="text-4xl md:text-[40px] font-semibold py-12">
           Results that speak louder <span className="text-yellow-400">than words</span>
         </h1>
       </div>
@@ -57,11 +57,16 @@ const Certificates = () => {
       {/* Auto Scrolling Images */}
       <div
         ref={wrapperRef}
-        className="overflow-hidden w-[85%] mx-auto h-auto min-h-0" // Ensure no height constraint
+        className="relative overflow-hidden w-[100%] mx-auto h-auto min-h-0"
       >
+        {/* Gradient Fades */}
+        <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
+
+        {/* Scrolling Track */}
         <div
           ref={trackRef}
-          className="flex flex-row  gap-6 w-max" // Force flex-col for md
+          className="flex flex-row gap-6 w-max"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           style={{ willChange: "transform" }}
@@ -71,8 +76,11 @@ const Certificates = () => {
               key={i}
               src={img}
               alt={`Certificate ${i + 1}`}
-              className="h-64 md:!h-96 lg:!h-72 object-contain rounded-lg shadow-md"
-              style={{ minWidth: "300px" }}
+              className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-2xl"
+              style={{
+                minWidth: "300px",
+                boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.6)"
+              }}
             />
           ))}
         </div>
