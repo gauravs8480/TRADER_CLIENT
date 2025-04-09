@@ -48,8 +48,8 @@ const Certificates = () => {
     <div className="bg-black text-white py-10 overflow-hidden">
       {/* Heading */}
       <div className="text-center mb-10 px-4 md:px-20">
-        <p className="text-sm lg:text-[15px] font-medium uppercase tracking-widest">LEARN. EXECUTE. WIN.</p>
-        <h1 className="text-4xl md:text-[40px] font-semibold py-12">
+        <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">LEARN. EXECUTE. WIN.</p>
+        <h1 className="text-2xl 2xl:text-[45px] md:text-[40px] font-semibold py-12">
           Results that speak louder <span className="text-yellow-400">than words</span>
         </h1>
       </div>

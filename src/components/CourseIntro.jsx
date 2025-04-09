@@ -15,18 +15,18 @@ const CourseIntro = () => {
   };
 
   return (
-    <div className="bg-black text-white text-center py-30 flex flex-col items-center">
-      <h1 className="text-4xl font-semibold mb-8 xl:text-[40px]">
+    <div className="bg-black text-white text-center py-3 md:py-30 flex flex-col items-center">
+      <h1 className=" 2xl:text-[50px] text-2xl font-semibold mb-8 xl:text-[40px]">
         What makes this course{" "}
-        <span className="text-yellow-400">different ?</span>
+        <span className="text-yellow-400">different?</span>
       </h1>
 
-      <p className="font-medium lg:text-[15px] xl:text-[15px]">
+      <p className=" 2xl:text-[15px] text-gray-300 text-[13px] md:font-medium lg:text-[15px] xl:text-[15px]">
         This isn't just another trading course - it's your path to funding and
         consistency
       </p>
-      <p className="font-medium lg:text-[15px]  ">Learn from real prop firm trader.</p>
-      <p className="font-medium mb-10 lg:text-[15px] ">
+      <p className=" 2xl:text-[15px] text-gray-300  text-[13px]  md:font-medium lg:text-[15px] ">Learn from real prop firm trader.</p>
+      <p className=" 2xl:text-[15px] text-gray-300  text-[13px]  md:font-medium mb-10 lg:text-[15px] ">
         Join a thriving discord community of serious traders.
       </p>
 
@@ -35,7 +35,7 @@ const CourseIntro = () => {
         {/* Video with Thumbnail */}
         <video
           ref={videoRef}
-          className="w-full h-auto rounded-[60px]  shadow-lg"
+          className="w-full h-auto md:rounded-[60px]  shadow-lg"
           style={{
             maxWidth: "1800px", // Increased max width for xl screens
             maxHeight: "900px", // Proportional max height for xl screens
@@ -50,7 +50,7 @@ const CourseIntro = () => {
         {/* Smaller Custom Play Button */}
         {!isPlaying && (
           <div
-            className="absolute flex items-center justify-center w-14 h-14 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-500 transition duration-300"
+            className="absolute flex items-center justify-center    md:w-14 md:h-14 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-500 transition duration-300"
             style={{
               top: "50%",
               left: "50%",
@@ -71,7 +71,7 @@ const CourseIntro = () => {
       </div>
 
       {/* Enroll Now Button */}
-      <button className="bg-yellow-400 text-black px-8 py-3 rounded-lg font-bold text-lg shadow-lg hover:bg-yellow-500 transition duration-300 lg:text-[15px]">
+      <button className=" 2xl:text-[15px] text-[13px] bg-yellow-400 text-black md:px-8 md:py-3 py-1 px-1 rounded-lg  text-lg shadow-lg hover:bg-yellow-500 transition duration-300 lg:text-[15px]">
         Enroll Now
       </button>
     </div>

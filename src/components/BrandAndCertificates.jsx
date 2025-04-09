@@ -38,7 +38,7 @@ const BrandAndCertificates = () => {
   return (
     <div className="bg-black flex flex-col justify-center items-center gap-y-15 py-45">
       {/* Title */}
-      <div className="text-white    text-center text-sm md:text-[15px] font-semibold tracking-wide">
+      <div className="text-white    text-center text-xs 2xl:text-[15px] md:text-[15px] font-semibold tracking-wide">
         FUNDED WITH PROP FIRMS WORLDWIDE
       </div>
 

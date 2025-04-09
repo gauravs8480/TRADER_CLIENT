@@ -9,12 +9,12 @@ const Mentor = () => {
       {/* Left Text Section */}
       <div className="w-full lg:w-[60%] flex flex-col gap-6">
         <div>
-          <p className="lg:text-[15px] text-gray-300">KNOW YOUR MENTOR</p>
-          <h2 className="text-4xl font-semibold mt-1 lg:text-[40px]">Rakesh Verma</h2>
-          <p className="text-white font-medium mt-1 lg:text-[15px]">Forex trader & Mentor</p>
+          <p className=" 2xl:text-[15px] text-xs  lg:text-[15px] text-gray-300">KNOW YOUR MENTOR</p>
+          <h2 className= "   2xl:text-[45px] text-2xl font-medium  md:text-4xl md:font-semibold mt-1 lg:text-[40px]">Rakesh Verma</h2>
+          <p className=" 2xl:text-[15px] text-xs font-medium  text-white md:font-medium mt-1 lg:text-[15px]">Forex trader & Mentor</p>
         </div>
 
-        <div className="text-sm text-gray-300 space-y-4 leading-relaxed lg:text-[15px]">
+        <div className="  2xl:text-[15px] text-[13px]  md:text-sm text-gray-300 space-y-4 leading-relaxed lg:text-[15px]">
           <p>
             Rakesh Verma is a trader with over 5 years of experience in the financial markets and
             currently a 7-figure funded prop firm trader. His journey reflects real results, having
@@ -27,12 +27,12 @@ const Mentor = () => {
           </p>
         </div>
 
-        <div className="flex gap-4 text-white text-3xl mt-4 lg:text-[30px]">
+        <div className=" 2xl:text-[45px] flex gap-4 text-white text-3xl mt-4 lg:text-[30px]">
           <FaInstagram />
           <FaDribbble />
         </div>
 
-        <p className="italic text-white font-medium mt-4 lg:text-[40px]">Rakesh Verma</p>
+        <p className=" 2xl:text-[45px] italic text-2xl text-white font-medium mt-4 lg:text-[40px]">Rakesh Verma</p>
       </div>
 
       {/* Right Image Section */}
