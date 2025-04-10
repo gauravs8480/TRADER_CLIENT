@@ -31,11 +31,11 @@ const CourseIntro = () => {
       </p>
 
       {/* Video Section */}
-      <div className="relative w-full flex justify-center items-center mx-auto mb-8">
+      <div className="relative w-full   flex justify-center items-center mx-auto mb-8">
         {/* Video with Thumbnail */}
         <video
           ref={videoRef}
-          className="w-full  sm:h-auto md:rounded-[60px]  shadow-lg"
+          className="w-full h-[300px]  object-cover sm:h-auto md:rounded-[60px]  shadow-lg"
           style={{
             maxWidth: "1800px", // Increased max width for xl screens
             maxHeight: "900px", // Proportional max height for xl screens
