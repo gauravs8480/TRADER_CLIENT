@@ -18,6 +18,7 @@ import certficate7 from "./Certificate7.png";
 import certficate8 from "./Certificate8.png";
 import certficate9 from "./Certificate9.png";
 import MentorPic from "./Mentor.jpg";
+import MentorPic2 from "./Mentor2.jpg"
 export {
   logo,
   video1,
@@ -39,4 +40,5 @@ export {
   certficate8,
   certficate9,
   MentorPic,
+  MentorPic2,
 };

@@ -1,10 +1,7 @@
 @import "tailwindcss";
+
+
 @theme {
-  --breakpoint-3xl: 1920px; /* 3xl starts right after 1536px */
-}
-/* Yellow arrows */
-.cert-swiper .swiper-button-next,
-.cert-swiper .swiper-button-prev {
-  color: #facc15 !important; /* Tailwind yellow-400 */
-  font-weight: bold;
+  
+  --breakpoint-3xl: 120rem;
 }

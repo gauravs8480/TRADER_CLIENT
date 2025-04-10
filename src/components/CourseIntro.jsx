@@ -15,14 +15,14 @@ const CourseIntro = () => {
   };
 
   return (
-    <div className="bg-black text-white text-center py-3 md:py-30 flex flex-col items-center">
-      <h1 className=" 2xl:text-[50px] text-2xl font-semibold mb-8 xl:text-[40px]">
+    <div className="bg-black text-white text-center pt-15 md:py-30 flex flex-col items-center">
+      <h1 className=" lg:text-[45px] text-[26px] font-semibold mb-8 3xl:text-[45px]">
         What makes this course{" "}
-        <span className="text-yellow-400">different?</span>
+        <span className="text-yellow-400">different ?</span>
       </h1>
 
-      <p className=" 2xl:text-[15px] text-gray-300 text-[13px] md:font-medium lg:text-[15px] xl:text-[15px]">
-        This isn't just another trading course - it's your path to funding and
+      <p className="  text-gray-300 text-[13px] md:font-medium lg:text-[15px] ">
+        This isn't just another trading course - it's your<br className="block lg:hidden" ></br> path to funding and
         consistency
       </p>
       <p className=" 2xl:text-[15px] text-gray-300  text-[13px]  md:font-medium lg:text-[15px] ">Learn from real prop firm trader.</p>
@@ -35,7 +35,7 @@ const CourseIntro = () => {
         {/* Video with Thumbnail */}
         <video
           ref={videoRef}
-          className="w-full h-auto md:rounded-[60px]  shadow-lg"
+          className="w-full  sm:h-auto md:rounded-[60px]  shadow-lg"
           style={{
             maxWidth: "1800px", // Increased max width for xl screens
             maxHeight: "900px", // Proportional max height for xl screens
@@ -71,8 +71,8 @@ const CourseIntro = () => {
       </div>
 
       {/* Enroll Now Button */}
-      <button className=" 2xl:text-[15px] text-[13px] bg-yellow-400 text-black md:px-8 md:py-3 py-1 px-1 rounded-lg  text-lg shadow-lg hover:bg-yellow-500 transition duration-300 lg:text-[15px]">
-        Enroll Now
+      <button className="text-black bg-yellow-400 text-[15px] h-[30px] w-[80px]  lg:h-[30px] font-semibold lg:w-[95px]   3xl:h-[40px] 3xl:w-[100px]  3xl:text-[20px]  lg:text-[15px]  rounded-md shadow-md hover:bg-yellow-500 transition-all    ">
+        Enroll 
       </button>
     </div>
   );

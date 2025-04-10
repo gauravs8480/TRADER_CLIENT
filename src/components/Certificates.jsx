@@ -7,82 +7,87 @@ import {
 } from "../assets";
 
 const Certificates = () => {
-  const wrapperRef = useRef(null);
   const trackRef = useRef(null);
   const animationRef = useRef(null);
 
-  const images = [
-    certficate1, certficate2, certficate3, certficate4,
-    certficate5, certficate6, certficate7, certficate8, certficate9
-  ];
-
   useEffect(() => {
-    if (!trackRef.current) return;
+    if (!trackRef.current) {
+      console.error("Error: trackRef is not connected to any DOM element!");
+      return;
+    }
 
-    const totalWidth = trackRef.current.scrollWidth / 2;
+    // // Log the DOM element to ensure it's connected
+    // console.log("Connected DOM element:", trackRef.current);
 
-    animationRef.current = gsap.to(trackRef.current, {
-      x: `-${totalWidth}px`,
-      duration: 60,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth)
-      }
+    // Duplicate content for seamless animation
+    const track = trackRef.current;
+    const images = [...track.children];
+    images.forEach((image) => {
+      const clone = image.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    // Calculate the total width for animation
+    const totalWidth = track.scrollWidth / 2;
+    console.log("Total scrollable width:", totalWidth);
+
+    // GSAP Animation
+    animationRef.current = gsap.to(track, {
+      x: `-${totalWidth}px`, // Move left by total width
+      duration: 30, // Duration of the animation
+      ease: "none", // No easing, linear motion
+      repeat: -1, // Infinite loop
     });
   }, []);
 
+  // Hover Handlers
   const handleMouseEnter = () => {
     if (animationRef.current) {
-      animationRef.current.timeScale(0.3); // Slow down
+      animationRef.current.timeScale(0.3); // Slow down animation on hover
     }
   };
 
   const handleMouseLeave = () => {
     if (animationRef.current) {
-      animationRef.current.timeScale(1); // Back to normal
+      animationRef.current.timeScale(1); // Resume normal animation speed
     }
   };
 
   return (
-    <div className="bg-black text-white py-10 overflow-hidden">
-      {/* Heading */}
-      <div className="text-center mb-10 px-4 md:px-20">
+    <div className="bg-black text-white pt-15 overflow-hidden">
+      {/* Heading */}  
+      <div className="text-center mb-10 px-3 md:px-20">
         <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">LEARN. EXECUTE. WIN.</p>
-        <h1 className="text-2xl 2xl:text-[45px] md:text-[40px] font-semibold py-12">
+        <h1 className="text-[26px] lg:text-[45px] font-semibold py-6">
           Results that speak louder <span className="text-yellow-400">than words</span>
         </h1>
       </div>
 
-      {/* Auto Scrolling Images */}
+      {/* Certificate Strip */}
       <div
-        ref={wrapperRef}
-        className="relative overflow-hidden w-[100%] mx-auto h-auto min-h-0"
+        className="relative overflow-hidden w-full mx-auto h-auto"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
-        {/* Gradient Fades */}
-        <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
+        {/* Gradient Shadows */}
+        <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none"></div>
 
-        {/* Scrolling Track */}
+        {/* Moving Certificates */}
         <div
           ref={trackRef}
-          className="flex flex-row gap-6 w-max"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          className="flex items-center gap-6"
           style={{ willChange: "transform" }}
         >
-          {[...images, ...images].map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt={`Certificate ${i + 1}`}
-              className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-2xl"
-              style={{
-                minWidth: "300px",
-                boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.6)"
-              }}
-            />
-          ))}
+          <img src={certficate1} alt="Certificate 1" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate2} alt="Certificate 2" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate3} alt="Certificate 3" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate4} alt="Certificate 4" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate5} alt="Certificate 5" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate6} alt="Certificate 6" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate7} alt="Certificate 7" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate8} alt="Certificate 8" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
+          <img src={certficate9} alt="Certificate 9" className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg" />
         </div>
       </div>
     </div>

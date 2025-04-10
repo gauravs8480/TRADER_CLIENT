@@ -36,9 +36,9 @@ const BrandAndCertificates = () => {
   };
 
   return (
-    <div className="bg-black flex flex-col justify-center items-center gap-y-15 py-45">
+    <div className="bg-black flex flex-col justify-center items-center gap-y-5 pt-15 pb-5 sm:pt-20 sm:pb-10">
       {/* Title */}
-      <div className="text-white    text-center text-xs 2xl:text-[15px] md:text-[15px] font-semibold tracking-wide">
+      <div className="text-white  pb-2  text-center text-xs 2xl:text-[15px] md:text-[15px] font-semibold tracking-wide">
         FUNDED WITH PROP FIRMS WORLDWIDE
       </div>
 
@@ -59,7 +59,7 @@ const BrandAndCertificates = () => {
               key={index}
               src={item.logo}
               alt={`Brand logo ${item.id || index}`}
-              className="w-20 h-20 object-contain mx-10 brightness-0 invert" // Increased gap to mx-16 (64px total)
+              className="w-20 h-20 object-contain mx-4 brightness-0 invert" // Increased gap to mx-16 (64px total)
             />
           ))}
         </div>

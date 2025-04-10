@@ -6,12 +6,15 @@ import CourseIntro from "./components/CourseIntro";
 import Mentor from "./components/Mentor";
 import CourseCompletionCertificate from "./components/CourseCompletionCertificate";
 import LayoutWrapper from "./uti/LayoutWrapper"; // Adjust path
+import HeroSectionWrapper from "./uti/HeroSectionWrapper";
+import VideoComp from "./components/VideoComp";
 
 const App = () => {
   return (
     <div className="">
+<VideoComp/>
 
-        <HeroSection />
+  
 
       <LayoutWrapper>
         <BrandsAndCertificates />

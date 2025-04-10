@@ -1,80 +1,86 @@
 import React from "react";
-import { candlestick, video1 } from "../assets";
 import NavBar from "../constants/NavBar";
+
 
 const HeroSection = () => {
   return (
     <>
-  
-    <NavBar />
+    <div className="h-screen ">
 
-      <div className="relative w-full h-screen pt-[70px] md:pt-[80px] flex flex-col overflow-hidden">
-        {/* Background Video */}
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src={video1} type="video/mp4" />
-          Your browser does not support the video.
-        </video>
-
+      <NavBar />
+      <div className="  relative   top-[186px]  lg:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
         {/* Content Container */}
-       
-<div
-  className="
-  lg:flex-col xl:flex-row xl:gap-x-55 2xl:gap-x-80 relative z-20 flex flex-col items-center justify-start
-  h-full w-full sm:px-6 pt-10 md:pt-1 lg:mt-2  2xl:mt-50 mt-12
-  md:mx-16 lg:ml-[-20px]  md:ml-[-12px] xl:mx-40 2xl:mx-40 
-"
->
-
-
+        <div
+          className="
+            lg:flex-row relative z-20 
+            flex flex-col justify-center  items-center lg:justify-between 
+          "
+        >
           {/* Hero Content */}
-          <div className=" max-w-[90%] sm:max-w-[80%] md:max-w-[500px] lg:max-w-[1500px] xl:text-left lg:text-center text-center text-white">
-            <h1 className="text-3xl 2xl:text-[63px] 3xl:text-8xl lg:text-5xl sm:text-4xl md:text-5xl xl:text-[60px] font-bold mb-2 sm:mb-3">
-              Master Trading
+          <div
+            className="
+               lg:w-[850px] lg:h-[355px] lg:pt-18  3xl:pt-0  3xl:w-[1000px]
+              text-white text-center lg:text-left
+            "
+          >
+            <h1 className="text-[40px] leading-[1.1] lg:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
+              Master Trading <br />
             </h1>
-            <h1 className="text-3xl 2xl:text-[63px] 3xl:text-8xl lg:text-5xl sm:text-4xl md:text-5xl xl:text-[60px] font-bold mb-2 sm:mb-3">
-              & Get Funded
+            <h1 className="text-[40px] leading-[1.1] lg:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
+              & Get Funded <br />
             </h1>
-            <h1 className="text-3xl 2xl:text-[63px] 3xl:text-8xl lg:text-5xl sm:text-4xl md:text-5xl xl:text-[60px] font-bold mb-4 sm:mb-6">
-              by <span className="text-yellow-400">RAKESH VERMA</span>
+            <h1 className=" text-[40px] leading-[1.1]  lg:text-[70px] lg:leading-[1.1] font-semibold 3xl:text-[95px] 3xl:leading-[1.2]">
+              by{" "}
+              <span className="text-yellow-400 font-normal">RAKESH VERMA</span>
             </h1>
-            <p className="2xl:text-[15px] text-[13px] font-semibold lg:font-semibold lg:text-[12px] sm:text-base md:text-sm xl:font-semibold mb-4 sm:mb-6">
-              Build solid trading skills, get funded and trade with serious
-              traders.
+            <p
+              className=" mt-6 text-[15px]
+            lg:text-[15px] lg:mt-5 font-semibold
+           3xl:text-[20px] 3xl:mt-6
+              "
+            >
+              Build solid trading skills, get funded, and trade{" "}
+              <span className="sm:hidden">
+                <br />
+              </span>
+              with serious traders.
             </p>
+
+
           </div>
 
           {/* Card Section */}
           <div
-            className="
-            w-[90%] sm:w-[70%] md:w-[60%] lg:w-[230px]
-            bg-white/10 backdrop-blur-md p-4 rounded shadow-lg
-            flex flex-col items-center text-center mt-6 md:-mt-3 
-          "
+            className=" items-center w-[300px] h-[145px] pt-4 lg:pt-0 mt-[100px]
+              lg:w-[350px] lg:h-[130px]  
+              bg-white/10 backdrop-blur-sm flex lg:pl-4 lg:items-start flex-col rounded-lg shadow-lg lg:mt-55 3xl:mt-65   3xl:w-[350px] 3xl:h-[155px] 3xl:pl-4 3xl:justify-start 3xl:items-start
+            "
           >
-            <p className="lg:text-left lg:text-[12px]  text-[13px] font-semibold sm:text-sm md:text-base text-white">
-              Get daily setups, live membership & network with funded traders.
+            <p
+              className="pb-4
+                  font-semibold
+                 text-white lg:mt-3 lg:text-[15px] lg:pb-4 3xl:text-[20px]
+              "
+            >
+              Get daily setups, live membership
+              <br /> & network with funded traders.
             </p>
-            <div className="lg:justify-start flex justify-center w-full">
-              <button className="mt-4 lg:text-[13px] bg-yellow-400 text-sm sm:text-base px-4 py-2 rounded shadow-md hover:bg-yellow-500 transition-all">
+            <div className="flex justify-center border-amber-400">
+              <button
+                className=" font-semibold
+                  bg-yellow-400  
+                  shadow-md hover:bg-yellow-500 transition-all h-10 rounded-md text-[15px] fomt-semibold w-35 3xl:w-[180px] 3xl:h-[42px] 3xl:text-[20px] 3xl:rounded-lg
+                "
+              >
                 Join our Discord
               </button>
             </div>
           </div>
         </div>
-
-        {/* Candlestick Image */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[150px] h-20 z-20 flex justify-center rounded-full animate-pulse">
-          <img src={candlestick} alt="Candlestick" className="object-contain" />
-        </div>
       </div>
-   
- 
+
+    </div>
+    
     </>
   );
 };
