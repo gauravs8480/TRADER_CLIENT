@@ -1,7 +1,6 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-// Importing certificate images
 import {
   certficate1,
   certficate2,
@@ -12,18 +11,9 @@ import {
   certficate7,
   certficate8,
   certficate9,
-  certficate11,
-  certficate12,
-  certficate13,
-  certficate14,
-  certficate15,
-  certficate16,
-  certficate17,
-  certficate18,
-  certficate19,
 } from "../assets";
 
-// Array of certificates
+// Array of certificate imports
 const certificates = [
   certficate1,
   certficate2,
@@ -34,98 +24,57 @@ const certificates = [
   certficate7,
   certficate8,
   certficate9,
-  certficate11,
-  certficate12,
-  certficate13,
-  certficate14,
-  certficate15,
-  certficate16,
-  certficate17,
-  certficate18,
-  certficate19,
 ];
 
-const Certificates = ({ animationDuration = 10 }) => {
+const Certificates = () => {
   const trackRef = useRef(null);
   const animationRef = useRef(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Preload images
   useEffect(() => {
-    let loadedCount = 0;
-    const totalImages = certificates.length;
-
-    const preloadImages = () => {
-      certificates.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        img.onload = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-        };
-        img.onerror = () => {
-          loadedCount++;
-          console.error(`Failed to load image: ${src}`);
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-        };
-      });
-    };
-
-    preloadImages();
-  }, []);
-
-  // Start animation after images are loaded
-  useEffect(() => {
-    if (!imagesLoaded) return;
-
-    // Clear previous animations
-    if (animationRef.current) {
-      animationRef.current.kill();
+    const track = trackRef.current;
+    if (!track || track.children.length === 0) {
+      console.error("Error: trackRef is not connected or has no children!");
+      return;
     }
 
-    const track = trackRef.current;
-    if (!track) return;
-
-    animationRef.current = gsap.to(track, {
-      x: "-50%", // Move the strip by 50% of its width
-      duration: animationDuration,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: (x) => `${gsap.utils.wrap(0, -50, parseFloat(x))}%`,
-      },
-      force3D: true,
+    // Duplicate content once for a lightweight seamless loop
+    const images = [...track.children];
+    images.forEach((image) => {
+      const clone = image.cloneNode(true);
+      track.appendChild(clone);
     });
 
+    // Calculate the total width for animation (half for one cycle)
+    const totalWidth = track.scrollWidth / 2;
+    console.log("Total scrollable width:", totalWidth);
+
+    // Lightweight GSAP animation
+    animationRef.current = gsap.to(track, {
+      x: `-${totalWidth}px`, // Move left by half the total width
+      duration: 30, // Duration of the animation
+      ease: "linear", // Simple linear motion
+      repeat: -1, // Infinite loop
+      force3D: true, // Enable GPU acceleration
+    });
+
+    // Cleanup animation on unmount
     return () => {
       if (animationRef.current) {
         animationRef.current.kill();
       }
     };
-  }, [imagesLoaded, animationDuration]);
+  }, []);
 
-  // Handle hover
+  // Hover Handlers
   const handleMouseEnter = () => {
     if (animationRef.current) {
-      gsap.to(animationRef.current, {
-        timeScale: 0.3,
-        duration: 0.3,
-        ease: "power1.out",
-      });
+      animationRef.current.timeScale(0.3); // Slow down on hover
     }
   };
 
   const handleMouseLeave = () => {
     if (animationRef.current) {
-      gsap.to(animationRef.current, {
-        timeScale: 1,
-        duration: 0.3,
-        ease: "power1.in",
-      });
+      animationRef.current.timeScale(1); // Resume normal speed
     }
   };
 
@@ -155,33 +104,15 @@ const Certificates = ({ animationDuration = 10 }) => {
         {/* Moving Certificates */}
         <div
           ref={trackRef}
-          className="flex items-center gap-6 w-[200%]"
-          style={{
-            willChange: "transform",
-            transform: "translateZ(0)",
-          }}
+          className="flex items-center gap-6"
+          style={{ willChange: "transform" }}
         >
-          {/* First set of certificates */}
           {certificates.map((cert, index) => (
             <img
-              key={`first-${index}`}
+              key={index}
               src={cert}
               alt={`Certificate ${index + 1}`}
               className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
-              loading="eager"
-              decoding="async"
-            />
-          ))}
-
-          {/* Second set of certificates (duplicate for seamless loop) */}
-          {certificates.map((cert, index) => (
-            <img
-              key={`second-${index}`}
-              src={cert}
-              alt={`Certificate ${index + 1}`}
-              className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
-              loading="eager"
-              decoding="async"
             />
           ))}
         </div>

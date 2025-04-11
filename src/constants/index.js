@@ -65,3 +65,49 @@ const brandLogos = [
 
     
   ]; export { cardsData };
+
+
+
+
+  export const courseSyllabus = [
+    {
+      id: 1,
+      title: "Introduction",
+      teaser: "Get started with marketing basics.",
+      descriptionLines: [
+        { text: "Learn foundational marketing concepts.", timeStamp: "8:12" },
+        { text: "Kickstart your marketing journey with ease.", timeStamp: "13:20" },
+        { text: "Build a strong base for future skills.", timeStamp: "21:12" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Principles",
+      teaser: "Learn key marketing strategies.",
+      descriptionLines: [
+        { text: "Master audience targeting techniques.", timeStamp: "5:10" },
+        { text: "Craft effective messaging strategies.", timeStamp: "13:40" },
+        { text: "Understand core marketing principles.", timeStamp: "20:30" },
+      ],
+    },
+    {
+      id: 3,
+      title: "Freelancing",
+      teaser: "Start your freelance career.",
+      descriptionLines: [
+        { text: "Find and attract new clients.", timeStamp: "12:00" },
+        { text: "Set competitive rates for services.", timeStamp: "24:50" },
+        { text: "Build a successful freelance career.", timeStamp: "33:20" },
+      ],
+    },
+    {
+      id: 4,
+      title: "Next steps",
+      teaser: "Advance your marketing skills.",
+      descriptionLines: [
+        { text: "Explore advanced marketing strategies.", timeStamp: "10:10" },
+        { text: "Utilize powerful tools for expertise.", timeStamp: "25:00" },
+        { text: "Elevate your marketing to the next level.", timeStamp: "40:00" },
+      ],
+    },
+  ];

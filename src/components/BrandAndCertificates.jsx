@@ -7,55 +7,88 @@ const BrandAndCertificates = () => {
   const animationRef = useRef(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Preload images
+  // Preload images before starting animation
   useEffect(() => {
     let loadedCount = 0;
     const totalImages = brandLogos.length;
-
-    brandLogos.forEach((item) => {
-      const img = new Image();
-      img.src = item.logo;
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === totalImages) setImagesLoaded(true);
-      };
-      img.onerror = () => {
-        loadedCount++;
-        console.error(`Failed to load image: ${item.logo}`);
-        if (loadedCount === totalImages) setImagesLoaded(true);
-      };
-    });
+    
+    const preloadImages = () => {
+      brandLogos.forEach(item => {
+        const img = new Image();
+        img.src = item.logo;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true);
+          }
+        };
+        img.onerror = () => {
+          loadedCount++;
+          console.error(`Failed to load image: ${item.logo}`);
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true);
+          }
+        };
+      });
+    };
+    
+    preloadImages();
   }, []);
 
-  // Start animation after images are loaded
+  // Start animation only after images are loaded
   useEffect(() => {
     if (!imagesLoaded) return;
-
-    if (animationRef.current) animationRef.current.kill();
+    
+    // Clear any existing animations to prevent conflicts
+    if (animationRef.current) {
+      animationRef.current.kill();
+    }
 
     const strip = stripRef.current;
     if (!strip) return;
 
-    // Infinite scrolling animation
+    // Important: use modifiers instead of onRepeat for truly infinite animation
     animationRef.current = gsap.to(strip, {
-      xPercent: -50, // Move the strip left by 50% of its width
-      duration: 15, // Duration of the animation
-      ease: "none", // Linear animation for smooth scrolling
-      repeat: -1, // Infinite repetition
+      x: "-50%", // Animate to half width (one set)
+      duration: 15,
+      ease: "none",
+      repeat: -1,
       modifiers: {
-        xPercent: gsap.utils.wrap(-100, 0), // Seamlessly wrap the xPercent value
+        x: (x) => {
+          // Keep position within bounds for continuous looping
+          // When reaching -50%, reset to 0% immediately to create seamless loop
+          return `${gsap.utils.wrap(0, -50, parseFloat(x))}%`;
+        }
       },
+      force3D: true
     });
 
-    return () => animationRef.current?.kill();
+    // Clean up function
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.kill();
+      }
+    };
   }, [imagesLoaded]);
 
   const handleMouseEnter = () => {
-    animationRef.current?.timeScale(0.5); // Slow down animation on hover
+    if (animationRef.current) {
+      gsap.to(animationRef.current, {
+        timeScale: 0.5,
+        duration: 0.3,
+        ease: "power1.out"
+      });
+    }
   };
 
   const handleMouseLeave = () => {
-    animationRef.current?.timeScale(1); // Resume normal speed on mouse leave
+    if (animationRef.current) {
+      gsap.to(animationRef.current, {
+        timeScale: 1,
+        duration: 0.3,
+        ease: "power1.in"
+      });
+    }
   };
 
   return (
@@ -78,22 +111,57 @@ const BrandAndCertificates = () => {
         {/* Moving Logo Strip */}
         <div
           ref={stripRef}
-          className="flex whitespace-nowrap w-[200%]"
-          style={{ willChange: "transform" }}
+          className="flex whitespace-nowrap w-[200%]" // Important: set explicit width to 200%
+          style={{
+            willChange: "transform",
+            transform: "translateZ(0)"
+          }}
         >
-          {Array(2) // Render two sets of logos for seamless looping
-            .fill(brandLogos)
-            .flat()
-            .map((item, index) => (
-              <img
-                key={index}
-                src={item.logo}
-                alt={`Brand logo ${item.id || index}`}
-                className="w-20 h-20 object-contain mx-4 brightness-0 invert"
-                loading="eager"
-                decoding="async"
-              />
-            ))}
+          {/* First set of logos */}
+          {brandLogos.map((item, index) => (
+            <img
+              key={`first-${index}`}
+              src={item.logo}
+              alt={`Brand logo ${item.id || index}`}
+              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
+          
+          {/* Second set of logos (pre-rendered for seamless loop) */}
+          {brandLogos.map((item, index) => (
+            <img
+              key={`second-${index}`}
+              src={item.logo}
+              alt={`Brand logo ${item.id || index}`}
+              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
+       {brandLogos.map((item, index) => (
+            <img
+              key={`third-${index}`}
+              src={item.logo}
+              alt={`Brand logo ${item.id || index}`}
+              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
+
+{brandLogos.map((item, index) => (
+            <img
+              key={`-${index}`}
+              src={item.logo}
+              alt={`Brand logo ${item.id || index}`}
+              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
+
         </div>
       </div>
     </div>

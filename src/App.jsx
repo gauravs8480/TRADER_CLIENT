@@ -9,6 +9,7 @@ import LayoutWrapper from "./uti/LayoutWrapper"; // Adjust path
 import HeroSectionWrapper from "./uti/HeroSectionWrapper";
 import VideoComp from "./components/VideoComp";
 import DiscordIntro from "./components/DiscordIntro";
+import CourseSyllabus from "./components/CourseSyllabus";
 
 const App = () => {
   return (
@@ -36,9 +37,9 @@ const App = () => {
 
 <DiscordIntro/>
 
-
-
-
+<LayoutWrapper>
+<CourseSyllabus/>
+</LayoutWrapper>
 
     </div>
   );
