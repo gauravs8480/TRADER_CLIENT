@@ -31,50 +31,63 @@ const Certificates = () => {
   const animationRef = useRef(null);
 
   useEffect(() => {
-    const track = trackRef.current;
-    if (!track || track.children.length === 0) {
-      console.error("Error: trackRef is not connected or has no children!");
-      return;
+    // Clear any existing animations to prevent conflicts
+    if (animationRef.current) {
+      animationRef.current.kill();
     }
 
-    // Duplicate content once for a lightweight seamless loop
-    const images = [...track.children];
-    images.forEach((image) => {
-      const clone = image.cloneNode(true);
-      track.appendChild(clone);
+    const ctx = gsap.context(() => {
+      const track = trackRef.current;
+      if (!track) return;
+
+      // Pre-calculate total width - important for performance
+      const singleSetWidth = track.offsetWidth / 2;
+
+      // Create and store the timeline
+      const tl = gsap.to(track, {
+        x: `-${singleSetWidth}px`,
+        duration: 8,
+        ease: "none", // "none" is more performant than "linear"
+        repeat: -1,
+        force3D: true,
+        overwrite: true,
+        onRepeat() {
+          // Reset position to start on each repeat - prevents jump
+          gsap.set(track, { x: "0px" });
+        }
+      });
+
+      // Store the animation for later reference
+      animationRef.current = tl;
     });
 
-    // Calculate the total width for animation (half for one cycle)
-    const totalWidth = track.scrollWidth / 2;
-    console.log("Total scrollable width:", totalWidth);
-
-    // Lightweight GSAP animation
-    animationRef.current = gsap.to(track, {
-      x: `-${totalWidth}px`, // Move left by half the total width
-      duration: 30, // Duration of the animation
-      ease: "linear", // Simple linear motion
-      repeat: -1, // Infinite loop
-      force3D: true, // Enable GPU acceleration
-    });
-
-    // Cleanup animation on unmount
+    // Clean up function
     return () => {
+      ctx.revert();
       if (animationRef.current) {
         animationRef.current.kill();
       }
     };
   }, []);
 
-  // Hover Handlers
+  // Hover Handlers with smooth transition
   const handleMouseEnter = () => {
     if (animationRef.current) {
-      animationRef.current.timeScale(0.3); // Slow down on hover
+      gsap.to(animationRef.current, {
+        timeScale: 0.3,
+        duration: 0.3,
+        ease: "power1.out"
+      });
     }
   };
 
   const handleMouseLeave = () => {
     if (animationRef.current) {
-      animationRef.current.timeScale(1); // Resume normal speed
+      gsap.to(animationRef.current, {
+        timeScale: 1,
+        duration: 0.3, 
+        ease: "power1.in"
+      });
     }
   };
 
@@ -105,14 +118,34 @@ const Certificates = () => {
         <div
           ref={trackRef}
           className="flex items-center gap-6"
-          style={{ willChange: "transform" }}
+          style={{
+            willChange: "transform",
+            backfaceVisibility: "hidden",
+            perspective: 1000,
+            transform: "translateZ(0)"
+          }}
         >
+          {/* First set of certificates */}
           {certificates.map((cert, index) => (
             <img
-              key={index}
+              key={`first-${index}`}
               src={cert}
               alt={`Certificate ${index + 1}`}
               className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
+          
+          {/* Second set of certificates (pre-rendered for seamless loop) */}
+          {certificates.map((cert, index) => (
+            <img
+              key={`second-${index}`}
+              src={cert}
+              alt={`Certificate ${index + 1}`}
+              className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+              loading="eager"
+              decoding="async"
             />
           ))}
         </div>

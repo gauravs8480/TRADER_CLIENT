@@ -1,56 +1,69 @@
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { brandLogos } from "../constants";
 import { gsap } from "gsap";
 
 const BrandAndCertificates = () => {
   const stripRef = useRef(null);
-  const tlRef = useRef(null);
+  const animationRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    // Clear any existing animations to prevent conflicts
+    if (animationRef.current) {
+      animationRef.current.kill();
+    }
+
     const ctx = gsap.context(() => {
       const strip = stripRef.current;
-      if (!strip || strip.children.length === 0) {
-        console.error("Error: stripRef is not connected or has no children!");
-        return;
-      }
+      if (!strip) return;
 
-      // Clone logos for seamless loop using DOM nodes (lighter than innerHTML)
-      const images = [...strip.children];
-      images.forEach((image) => {
-        const clone = image.cloneNode(true);
-        strip.appendChild(clone);
-      });
+      // Pre-calculate total width - this is critical for performance
+      const singleSetWidth = strip.offsetWidth / 2;
 
-      // GPU acceleration
-      gsap.set(strip, { force3D: true });
-
-      // Calculate the total width for animation (half for one cycle)
-      const totalWidth = strip.scrollWidth / 2;
-      console.log("Total scrollable width:", totalWidth);
-
-      // Lightweight GSAP animation
+      // Create and store the timeline
       const tl = gsap.to(strip, {
-        x: `-${totalWidth}`, // Move left by half the total width
-        duration: 20, // Duration of the animation
-        ease: "linear", // Simple linear motion
-        repeat: -1, // Infinite loop
+        x: `-${singleSetWidth}px`, 
+        duration: 20,
+        ease: "none", // "none" is more performant than "linear"
+        repeat: -1,
+        force3D: true, // Force GPU acceleration
+        overwrite: true, // Prevent animation stacking
+        onRepeat() {
+          // Immediately reset to start on repeat for better performance
+          gsap.set(strip, { x: "0px" });
+        }
       });
 
-      tlRef.current = tl;
+      // Store the animation for later reference
+      animationRef.current = tl;
     });
 
-    return () => ctx.revert(); // Cleanup
+    // Clean up function
+    return () => {
+      ctx.revert();
+      if (animationRef.current) {
+        animationRef.current.kill();
+      }
+    };
   }, []);
 
   const handleMouseEnter = () => {
-    if (tlRef.current) {
-      tlRef.current.timeScale(0.7); // Slow on hover
+    if (animationRef.current) {
+      // Use timeScale instead of changing the duration directly
+      gsap.to(animationRef.current, {
+        timeScale: 0.5,
+        duration: 0.3,
+        ease: "power1.out"
+      });
     }
   };
 
   const handleMouseLeave = () => {
-    if (tlRef.current) {
-      tlRef.current.timeScale(1); // Normal speed
+    if (animationRef.current) {
+      gsap.to(animationRef.current, {
+        timeScale: 1,
+        duration: 0.3,
+        ease: "power1.in"
+      });
     }
   };
 
@@ -74,15 +87,35 @@ const BrandAndCertificates = () => {
         {/* Moving Logo Strip */}
         <div
           ref={stripRef}
-          className="flex whitespace-nowrap will-change-transform"
-          style={{ transform: "translateZ(0)" }} // GPU acceleration
+          className="flex whitespace-nowrap"
+          style={{
+            willChange: "transform",
+            backfaceVisibility: "hidden",
+            perspective: 1000,
+            transform: "translateZ(0)" 
+          }}
         >
+          {/* First set of logos */}
           {brandLogos.map((item, index) => (
             <img
-              key={index}
+              key={`first-${index}`}
               src={item.logo}
               alt={`Brand logo ${item.id || index}`}
               className="w-20 h-20 object-contain mx-4 brightness-0 invert"
+              loading="eager"
+              decoding="async"
+            />
+          ))}
+          
+          {/* Second set of logos (pre-rendered for seamless loop) */}
+          {brandLogos.map((item, index) => (
+            <img
+              key={`second-${index}`}
+              src={item.logo}
+              alt={`Brand logo ${item.id || index}`}
+              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
+              loading="eager"
+              decoding="async"
             />
           ))}
         </div>
