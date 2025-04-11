@@ -16,8 +16,8 @@ const Certificates = () => {
       return;
     }
 
-    // // Log the DOM element to ensure it's connected
-    // console.log("Connected DOM element:", trackRef.current);
+    // Log the DOM element to ensure it's connected
+    console.log("Connected DOM element:", trackRef.current);
 
     // Duplicate content for seamless animation
     const track = trackRef.current;
@@ -31,12 +31,14 @@ const Certificates = () => {
     const totalWidth = track.scrollWidth / 2;
     console.log("Total scrollable width:", totalWidth);
 
-    // GSAP Animation
+    // GSAP Animation with optimizations
     animationRef.current = gsap.to(track, {
       x: `-${totalWidth}px`, // Move left by total width
       duration: 30, // Duration of the animation
       ease: "none", // No easing, linear motion
       repeat: -1, // Infinite loop
+      force3D: true, // Enforce GPU acceleration
+      autoKill: false, // Prevent unnecessary recalculations
     });
   }, []);
 
