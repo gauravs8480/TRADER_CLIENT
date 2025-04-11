@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 import {
@@ -12,8 +12,8 @@ import {
 } from "../assets";
 
 const BrandLogos = () => {
-  const trackRef = useRef(null);
   const animationRef = useRef(null);
+  const sliderRef = useRef(null);
 
   const brandLogos = [
     brandlogo1,
@@ -26,59 +26,37 @@ const BrandLogos = () => {
   ];
 
   useEffect(() => {
-    const track = trackRef.current;
+    const slider = sliderRef.current;
+    if (!slider) return;
 
-    // Ensure the track exists and isn't already cloned
-    if (!track || track.children.length === 0 || track.dataset.cloned === "true") return;
-
-    // Duplicate logos for seamless scrolling
-    const logos = [...track.children];
-    logos.forEach((logo) => {
-      const clone = logo.cloneNode(true);
-      track.appendChild(clone);
-    });
-
-    // Mark track as cloned to prevent redundant cloning
-    track.dataset.cloned = "true";
-
-    // Calculate width for one scroll cycle
-    const totalWidth = track.scrollWidth / 2;
-
-    // Animate the track with GSAP
-    animationRef.current = gsap.to(track, {
-      x: `-${totalWidth}px`, // Move left by half the total width
-      duration: 20, // Adjust speed as desired
+    animationRef.current = gsap.to(slider, {
+      xPercent: -50,
+      duration: 5,
+      repeat: -1,
       ease: "linear",
-      repeat: -1, // Infinite looping
-      force3D: true,
     });
 
-    // Cleanup animation on unmount
     return () => {
-      if (animationRef.current) {
-        animationRef.current.kill();
-      }
+      if (animationRef.current) animationRef.current.kill();
     };
   }, []);
 
   const handleMouseEnter = () => {
-    if (animationRef.current) animationRef.current.timeScale(0.3); // Slow animation on hover
+    if (animationRef.current) animationRef.current.timeScale(0.3);
   };
 
   const handleMouseLeave = () => {
-    if (animationRef.current) animationRef.current.timeScale(1); // Resume animation speed
+    if (animationRef.current) animationRef.current.timeScale(1);
   };
 
   return (
-    <div className="bg-black text-white pt-15 pb-15 overflow-hidden">
-      {/* Header */}
+    <div className="bg-black text-white py-10 overflow-hidden">
       <div className="text-center mb-10 px-3 md:px-20">
         <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
           FUNDED WITH TOP PROP FIRMS WORLDWIDE
         </p>
       </div>
 
-      {/* Logo Strip */}
       <div
         className="relative overflow-hidden w-full mx-auto h-auto"
         onMouseEnter={handleMouseEnter}
@@ -88,19 +66,15 @@ const BrandLogos = () => {
         <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
 
-        {/* Moving Logos */}
-        <div
-          ref={trackRef}
-          className="flex items-center gap-6 px-2"
-          style={{ willChange: "transform" }}
-        >
-          {brandLogos.map((logo, index) => (
+        {/* Slider */}
+        <div className="flex w-max" ref={sliderRef} style={{ willChange: "transform" }}>
+          {[...brandLogos, ...brandLogos].map((logo, index) => (
             <img
               key={index}
               src={logo}
-              alt={`Brand Logo ${index + 1}`} // Corrected syntax for string interpolation
+              alt={`Brand Logo ${index + 1}`}
               loading="lazy"
-              className="h-15 w-20 object-contain rounded-lg shadow-lg brightness-0 invert"
+              className="h-15 w-20 object-contain mx-3 brightness-0 invert"
             />
           ))}
         </div>
