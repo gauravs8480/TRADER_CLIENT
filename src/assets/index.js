@@ -8,6 +8,7 @@ import brandlogo4 from "./Brandlogo4.svg";
 import brandlogo5 from "./Brandlogo5.svg";
 import brandlogo6 from "./Brandlogo6.svg";
 import brandlogo7 from "./Brandlogo7.svg";
+
 import certficate1 from "./Certificate1.png";
 import certficate2 from "./Certificate2.jpg";
 import certficate3 from "./Certificate3.png";

@@ -1,4 +1,4 @@
-import { brandlogo1, certficate1, certficate2, certficate3, certficate4 } from "../assets";
+import { brandlogo1, certficate1, certficate2, certficate3, certficate4, certficate5, certficate6, certficate7, certficate8, certficate9 } from "../assets";
 import { brandlogo2 } from "../assets";
 import { brandlogo3 } from "../assets";
 import { brandlogo4 } from "../assets";
@@ -6,7 +6,19 @@ import { brandlogo5 } from "../assets";
 import { brandlogo6 } from "../assets";
 import { brandlogo7 } from "../assets";
 
+const certficates = [
+  { id: 1, certficate:certficate1 },
+  { id: 2, certficate:certficate2 },
+  { id: 3, certficate:certficate3 },
+  { id: 4, certficate:certficate4 },
+  { id: 5, certficate:certficate5 },
+  { id: 6, certficate:certficate6 },
+  { id: 7, certficate:certficate7 },
+  { id: 8, certficate:certficate8 },
+  { id: 9, certficate:certficate9 },
+];
 
+export { certficates };
 
 
 

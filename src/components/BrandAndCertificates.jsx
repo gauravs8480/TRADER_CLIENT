@@ -1,171 +1,116 @@
-import React, { useRef, useEffect, useState } from "react";
-import { brandLogos } from "../constants";
-import { gsap } from "gsap";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
 
-const BrandAndCertificates = () => {
-  const stripRef = useRef(null);
+import {
+  brandlogo1,
+  brandlogo2,
+  brandlogo3,
+  brandlogo4,
+  brandlogo5,
+  brandlogo6,
+  brandlogo7,
+} from "../assets";
+
+const BrandLogos = () => {
+  const trackRef = useRef(null);
   const animationRef = useRef(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  // Preload images before starting animation
-  useEffect(() => {
-    let loadedCount = 0;
-    const totalImages = brandLogos.length;
-    
-    const preloadImages = () => {
-      brandLogos.forEach(item => {
-        const img = new Image();
-        img.src = item.logo;
-        img.onload = () => {
-          loadedCount++;
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-        };
-        img.onerror = () => {
-          loadedCount++;
-          console.error(`Failed to load image: ${item.logo}`);
-          if (loadedCount === totalImages) {
-            setImagesLoaded(true);
-          }
-        };
-      });
-    };
-    
-    preloadImages();
-  }, []);
+  const brandLogos = [
+    brandlogo1,
+    brandlogo2,
+    brandlogo3,
+    brandlogo4,
+    brandlogo5,
+    brandlogo6,
+    brandlogo7,
+  ];
 
-  // Start animation only after images are loaded
   useEffect(() => {
-    if (!imagesLoaded) return;
-    
-    // Clear any existing animations to prevent conflicts
-    if (animationRef.current) {
-      animationRef.current.kill();
+    const track = trackRef.current;
+    if (!track || track.children.length === 0) {
+      console.error("Error: trackRef is not connected or has no children!");
+      return;
     }
 
-    const strip = stripRef.current;
-    if (!strip) return;
-
-    // Important: use modifiers instead of onRepeat for truly infinite animation
-    animationRef.current = gsap.to(strip, {
-      x: "-50%", // Animate to half width (one set)
-      duration: 15,
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: (x) => {
-          // Keep position within bounds for continuous looping
-          // When reaching -50%, reset to 0% immediately to create seamless loop
-          return `${gsap.utils.wrap(0, -50, parseFloat(x))}%`;
-        }
-      },
-      force3D: true
+    // Duplicate content for a seamless loop
+    const logos = [...track.children];
+    logos.forEach((logo) => {
+      const clone = logo.cloneNode(true);
+      track.appendChild(clone);
     });
 
-    // Clean up function
+    // Calculate the total width for animation (half for one cycle)
+    const totalWidth = track.scrollWidth / 2;
+    console.log("Total scrollable width:", totalWidth);
+
+    // Create GSAP animation
+    animationRef.current = gsap.to(track, {
+      x: `-${totalWidth}px`, // Scroll left by half the total width
+      duration: 30, // Duration of the animation
+      ease: "linear", // Linear scrolling effect
+      repeat: -1, // Infinite loop
+      force3D: true, // GPU acceleration
+    });
+
+    // Cleanup animation on component unmount
     return () => {
       if (animationRef.current) {
         animationRef.current.kill();
       }
     };
-  }, [imagesLoaded]);
+  }, []);
 
+  // Hover Handlers
   const handleMouseEnter = () => {
     if (animationRef.current) {
-      gsap.to(animationRef.current, {
-        timeScale: 0.5,
-        duration: 0.3,
-        ease: "power1.out"
-      });
+      animationRef.current.timeScale(0.3); // Slow down animation on hover
     }
   };
 
   const handleMouseLeave = () => {
     if (animationRef.current) {
-      gsap.to(animationRef.current, {
-        timeScale: 1,
-        duration: 0.3,
-        ease: "power1.in"
-      });
+      animationRef.current.timeScale(1); // Resume normal speed
     }
   };
 
   return (
-    <div className="bg-black flex flex-col justify-center items-center gap-y-5 pt-15 pb-5 sm:pt-20 sm:pb-10">
-      {/* Title */}
-      <div className="text-white pb-2 text-center text-xs 2xl:text-[15px] md:text-[15px] font-semibold tracking-wide">
-        FUNDED WITH PROP FIRMS WORLDWIDE
+    <div className="bg-black text-white pt-15 pb-15 overflow-hidden">
+      {/* Header */}
+      <div className="text-center mb-10 px-3 md:px-20">
+        <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
+    FUNDED WITH TOP PROP FIRMS WORLDWIDE
+        </p>
+        
       </div>
 
-      {/* Logo Strip */}
+      {/* Brand Logo Strip */}
       <div
-        className="relative w-full h-20 overflow-hidden flex items-center rounded-lg shadow-2xl"
+        className="relative overflow-hidden w-full mx-auto h-auto"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {/* Gradient Fades */}
+        {/* Gradient Shadows */}
         <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
 
-        {/* Moving Logo Strip */}
+        {/* Moving Brand Logos */}
         <div
-          ref={stripRef}
-          className="flex whitespace-nowrap w-[200%]" // Important: set explicit width to 200%
-          style={{
-            willChange: "transform",
-            transform: "translateZ(0)"
-          }}
+          ref={trackRef}
+          className="flex items-center gap-6"
+          style={{ willChange: "transform" }}
         >
-          {/* First set of logos */}
-          {brandLogos.map((item, index) => (
+          {brandLogos.map((logo, index) => (
             <img
-              key={`first-${index}`}
-              src={item.logo}
-              alt={`Brand logo ${item.id || index}`}
-              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
-              loading="eager"
-              decoding="async"
+              key={index}
+              src={logo}
+              alt={`Brand Logo ${index + 1}`}
+              className="h-15 w-20 object-contain rounded-lg shadow-lg brightness-0 invert"
             />
           ))}
-          
-          {/* Second set of logos (pre-rendered for seamless loop) */}
-          {brandLogos.map((item, index) => (
-            <img
-              key={`second-${index}`}
-              src={item.logo}
-              alt={`Brand logo ${item.id || index}`}
-              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
-              loading="eager"
-              decoding="async"
-            />
-          ))}
-       {brandLogos.map((item, index) => (
-            <img
-              key={`third-${index}`}
-              src={item.logo}
-              alt={`Brand logo ${item.id || index}`}
-              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
-              loading="eager"
-              decoding="async"
-            />
-          ))}
-
-{brandLogos.map((item, index) => (
-            <img
-              key={`-${index}`}
-              src={item.logo}
-              alt={`Brand logo ${item.id || index}`}
-              className="w-20 h-20 object-contain mx-4 brightness-0 invert"
-              loading="eager"
-              decoding="async"
-            />
-          ))}
-
         </div>
       </div>
     </div>
   );
 };
 
-export default BrandAndCertificates;
+export default BrandLogos;

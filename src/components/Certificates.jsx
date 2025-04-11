@@ -13,19 +13,6 @@ import {
   certficate9,
 } from "../assets";
 
-// Array of certificate imports
-const certificates = [
-  certficate1,
-  certficate2,
-  certficate3,
-  certficate4,
-  certficate5,
-  certficate6,
-  certficate7,
-  certficate8,
-  certficate9,
-];
-
 const Certificates = () => {
   const trackRef = useRef(null);
   const animationRef = useRef(null);
@@ -107,14 +94,51 @@ const Certificates = () => {
           className="flex items-center gap-6"
           style={{ willChange: "transform" }}
         >
-          {certificates.map((cert, index) => (
-            <img
-              key={index}
-              src={cert}
-              alt={`Certificate ${index + 1}`}
-              className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
-            />
-          ))}
+          <img
+            src={certficate1}
+            alt="Certificate 1"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate2}
+            alt="Certificate 2"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate3}
+            alt="Certificate 3"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate4}
+            alt="Certificate 4"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate5}
+            alt="Certificate 5"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate6}
+            alt="Certificate 6"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate7}
+            alt="Certificate 7"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate8}
+            alt="Certificate 8"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
+          <img
+            src={certficate9}
+            alt="Certificate 9"
+            className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
+          />
         </div>
       </div>
     </div>
