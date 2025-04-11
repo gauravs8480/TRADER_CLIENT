@@ -45,14 +45,14 @@ const BrandLogos = () => {
 
     // Create GSAP animation
     animationRef.current = gsap.to(track, {
-      x: `-${totalWidth}px`, // Scroll left by half the total width
-      duration: 20, // Duration of the animation
-      ease: "linear", // Linear scrolling effect
-      repeat: -1, // Infinite loop
-      force3D: true, // GPU acceleration
+      x: `-${totalWidth}px`, 
+      duration: 20, 
+      ease: "linear", 
+      repeat: -1, 
+      force3D: true, 
     });
 
-    // Cleanup animation on component unmount
+    
     return () => {
       if (animationRef.current) {
         animationRef.current.kill();
