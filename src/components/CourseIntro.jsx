@@ -35,7 +35,7 @@ const CourseIntro = () => {
         {/* Video with Thumbnail */}
         <video
           ref={videoRef}
-          className="w-full h-[300px]  object-cover sm:h-auto md:rounded-[60px]  shadow-lg"
+          className="w-full h-[300px]  object-cover sm:h-auto  rounded-2xl md:rounded-[40px]  shadow-lg"
           style={{
             maxWidth: "1800px", // Increased max width for xl screens
             maxHeight: "900px", // Proportional max height for xl screens

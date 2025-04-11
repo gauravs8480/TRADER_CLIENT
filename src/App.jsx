@@ -8,6 +8,7 @@ import CourseCompletionCertificate from "./components/CourseCompletionCertificat
 import LayoutWrapper from "./uti/LayoutWrapper"; // Adjust path
 import HeroSectionWrapper from "./uti/HeroSectionWrapper";
 import VideoComp from "./components/VideoComp";
+import DiscordIntro from "./components/DiscordIntro";
 
 const App = () => {
   return (
@@ -31,6 +32,14 @@ const App = () => {
       <LayoutWrapper>
         <CourseCompletionCertificate />
       </LayoutWrapper>
+
+
+<DiscordIntro/>
+
+
+
+
+
     </div>
   );
 };

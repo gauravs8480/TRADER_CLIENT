@@ -5,7 +5,7 @@ import HeroSection from '../components/HeroSection';
 
 const HeroSectionWrapper = () => {
   return (
-    <div className="  px-1  lg:px-45 3xl:px-62  w-full z-20">
+    <div className="    px-1  lg:px-45 3xl:px-62 4xl:px-100  w-full z-20">
 
  <HeroSection/>
     </div>

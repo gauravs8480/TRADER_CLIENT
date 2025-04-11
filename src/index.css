@@ -4,4 +4,15 @@
 @theme {
   
   --breakpoint-3xl: 120rem;
+  --breakpoint-4xl:160rem;
+}
+
+
+.cards-container {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE */
+}
+
+.cards-container::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
 }

@@ -1,4 +1,4 @@
-import { brandlogo1 } from "../assets";
+import { brandlogo1, certficate1, certficate2, certficate3, certficate4 } from "../assets";
 import { brandlogo2 } from "../assets";
 import { brandlogo3 } from "../assets";
 import { brandlogo4 } from "../assets";
@@ -21,3 +21,47 @@ const brandLogos = [
   ];
   
   export { brandLogos };
+
+  const cardsData = [
+    {
+      title: "Active trader community",
+      description: "Watch and learn from real-time market analysis and trade breakdowns.",
+      image: certficate1,
+    },
+    {
+      title: "Live trading sessions",
+      description: "Watch and learn from real-time market analysis and trade breakdowns.",
+      image: certficate2,
+    },
+    {
+      title: "Daily market breakdowns",
+      description: "Stay ahead with in-depth analysis, trade ideas, and news updates.",
+      image: certficate3,
+    },
+    {
+      title: "Exclusive",
+      description: "Get insider know how and securing pay.",
+      image: certficate1,
+    },
+
+    {
+      title: "Exclusive",
+      description: "Get insider know how and securing pay.",
+      image: certficate4,
+    },
+    {
+      title: "Exclusive",
+      description: "Get insider know how and securing pay.",
+      image: certficate4,
+    },
+    {
+      title: "Exclusive prop firm insights",
+      description: "Get insider knowledge on passing challenges and securing payouts.",
+      image: certficate1,
+    },
+
+
+
+
+    
+  ]; export { cardsData };
