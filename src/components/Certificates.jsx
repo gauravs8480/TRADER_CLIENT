@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 
+// Importing certificate images
 import {
   certficate1,
   certficate2,
@@ -11,9 +12,18 @@ import {
   certficate7,
   certficate8,
   certficate9,
+  certficate11,
+  certficate12,
+  certficate13,
+  certficate14,
+  certficate15,
+  certficate16,
+  certficate17,
+  certficate18,
+  certficate19,
 } from "../assets";
 
-// Array of certificate imports
+// Array of certificates
 const certificates = [
   certficate1,
   certficate2,
@@ -24,59 +34,87 @@ const certificates = [
   certficate7,
   certficate8,
   certficate9,
+  certficate11,
+  certficate12,
+  certficate13,
+  certficate14,
+  certficate15,
+  certficate16,
+  certficate17,
+  certficate18,
+  certficate19,
 ];
 
-const Certificates = () => {
+const Certificates = ({ animationDuration = 10 }) => {
   const trackRef = useRef(null);
   const animationRef = useRef(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // Preload images
   useEffect(() => {
-    // Clear any existing animations to prevent conflicts
+    let loadedCount = 0;
+    const totalImages = certificates.length;
+
+    const preloadImages = () => {
+      certificates.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+          loadedCount++;
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true);
+          }
+        };
+        img.onerror = () => {
+          loadedCount++;
+          console.error(`Failed to load image: ${src}`);
+          if (loadedCount === totalImages) {
+            setImagesLoaded(true);
+          }
+        };
+      });
+    };
+
+    preloadImages();
+  }, []);
+
+  // Start animation after images are loaded
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
+    // Clear previous animations
     if (animationRef.current) {
       animationRef.current.kill();
     }
 
-    const ctx = gsap.context(() => {
-      const track = trackRef.current;
-      if (!track) return;
+    const track = trackRef.current;
+    if (!track) return;
 
-      // Pre-calculate total width - important for performance
-      const singleSetWidth = track.offsetWidth / 2;
-
-      // Create and store the timeline
-      const tl = gsap.to(track, {
-        x: `-${singleSetWidth}px`,
-        duration: 8,
-        ease: "none", // "none" is more performant than "linear"
-        repeat: -1,
-        force3D: true,
-        overwrite: true,
-        onRepeat() {
-          // Reset position to start on each repeat - prevents jump
-          gsap.set(track, { x: "0px" });
-        }
-      });
-
-      // Store the animation for later reference
-      animationRef.current = tl;
+    animationRef.current = gsap.to(track, {
+      x: "-50%", // Move the strip by 50% of its width
+      duration: animationDuration,
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: (x) => `${gsap.utils.wrap(0, -50, parseFloat(x))}%`,
+      },
+      force3D: true,
     });
 
-    // Clean up function
     return () => {
-      ctx.revert();
       if (animationRef.current) {
         animationRef.current.kill();
       }
     };
-  }, []);
+  }, [imagesLoaded, animationDuration]);
 
-  // Hover Handlers with smooth transition
+  // Handle hover
   const handleMouseEnter = () => {
     if (animationRef.current) {
       gsap.to(animationRef.current, {
         timeScale: 0.3,
         duration: 0.3,
-        ease: "power1.out"
+        ease: "power1.out",
       });
     }
   };
@@ -85,8 +123,8 @@ const Certificates = () => {
     if (animationRef.current) {
       gsap.to(animationRef.current, {
         timeScale: 1,
-        duration: 0.3, 
-        ease: "power1.in"
+        duration: 0.3,
+        ease: "power1.in",
       });
     }
   };
@@ -117,12 +155,10 @@ const Certificates = () => {
         {/* Moving Certificates */}
         <div
           ref={trackRef}
-          className="flex items-center gap-6"
+          className="flex items-center gap-6 w-[200%]"
           style={{
             willChange: "transform",
-            backfaceVisibility: "hidden",
-            perspective: 1000,
-            transform: "translateZ(0)"
+            transform: "translateZ(0)",
           }}
         >
           {/* First set of certificates */}
@@ -136,8 +172,8 @@ const Certificates = () => {
               decoding="async"
             />
           ))}
-          
-          {/* Second set of certificates (pre-rendered for seamless loop) */}
+
+          {/* Second set of certificates (duplicate for seamless loop) */}
           {certificates.map((cert, index) => (
             <img
               key={`second-${index}`}

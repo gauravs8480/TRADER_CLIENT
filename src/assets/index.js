@@ -17,6 +17,23 @@ import certficate6 from "./Certificate6.jpg";
 import certficate7 from "./Certificate7.png";
 import certficate8 from "./Certificate8.png";
 import certficate9 from "./Certificate9.png";
+
+import certficate11 from "./Certificate1.png";
+import certficate12 from "./Certificate2.jpg";
+import certficate13 from "./Certificate3.png";
+import certficate14 from "./Certificate4.jpg";
+import certficate15 from "./Certificate5.jpg";
+import certficate16 from "./Certificate6.jpg";
+import certficate17 from "./Certificate7.png";
+import certficate18 from "./Certificate8.png";
+import certficate19 from "./Certificate9.png"
+
+
+
+
+
+
+
 import MentorPic from "./Mentor.jpg";
 import MentorPic2 from "./Mentor2.jpg"
 export {
@@ -39,6 +56,17 @@ export {
   certficate7,
   certficate8,
   certficate9,
+  certficate11,
+  certficate12,
+  certficate13,
+  certficate14,
+  certficate15,
+  certficate16,
+  certficate17,
+  certficate18,
+  certficate19,
+
+
   MentorPic,
   MentorPic2,
 };
