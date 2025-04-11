@@ -9,22 +9,31 @@ const BrandAndCertificates = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const strip = stripRef.current;
-      if (!strip) return;
+      if (!strip || strip.children.length === 0) {
+        console.error("Error: stripRef is not connected or has no children!");
+        return;
+      }
 
-      // Clone logos for seamless loop
-      const cloned = strip.innerHTML;
-      strip.innerHTML += cloned;
+      // Clone logos for seamless loop using DOM nodes (lighter than innerHTML)
+      const images = [...strip.children];
+      images.forEach((image) => {
+        const clone = image.cloneNode(true);
+        strip.appendChild(clone);
+      });
 
       // GPU acceleration
       gsap.set(strip, { force3D: true });
 
+      // Calculate the total width for animation (half for one cycle)
       const totalWidth = strip.scrollWidth / 2;
+      console.log("Total scrollable width:", totalWidth);
 
+      // Lightweight GSAP animation
       const tl = gsap.to(strip, {
-        x: `-=${totalWidth}`,
-        duration: 20,
-        ease: "linear",
-        repeat: -1,
+        x: `-${totalWidth}`, // Move left by half the total width
+        duration: 20, // Duration of the animation
+        ease: "linear", // Simple linear motion
+        repeat: -1, // Infinite loop
       });
 
       tlRef.current = tl;
@@ -34,11 +43,15 @@ const BrandAndCertificates = () => {
   }, []);
 
   const handleMouseEnter = () => {
-    tlRef.current?.timeScale(0.7); // Slow on hover
+    if (tlRef.current) {
+      tlRef.current.timeScale(0.7); // Slow on hover
+    }
   };
 
   const handleMouseLeave = () => {
-    tlRef.current?.timeScale(1); // Normal speed
+    if (tlRef.current) {
+      tlRef.current.timeScale(1); // Normal speed
+    }
   };
 
   return (
