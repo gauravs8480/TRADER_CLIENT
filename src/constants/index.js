@@ -85,7 +85,7 @@ const brandLogos = [
     {
       id: 1,
       title: "Introduction",
-      teaser: "Get started with marketing basics.",
+      teaser: "overview of fundamentals marketing concepts to kickstart your journey.",
       descriptionLines: [
         { text: "Learn foundational marketing concepts.", timeStamp: "8:12" },
         { text: "Kickstart your marketing journey with ease.", timeStamp: "13:20" },
@@ -95,7 +95,7 @@ const brandLogos = [
     {
       id: 2,
       title: "Principles",
-      teaser: "Learn key marketing strategies.",
+      teaser: "Core principles of marketing from audience targeting to messaging",
       descriptionLines: [
         { text: "Master audience targeting techniques.", timeStamp: "5:10" },
         { text: "Craft effective messaging strategies.", timeStamp: "13:40" },
@@ -105,7 +105,7 @@ const brandLogos = [
     {
       id: 3,
       title: "Freelancing",
-      teaser: "Start your freelance career.",
+      teaser: "Learn to find clients set rates, and build a freelance marketing career.",
       descriptionLines: [
         { text: "Find and attract new clients.", timeStamp: "12:00" },
         { text: "Set competitive rates for services.", timeStamp: "24:50" },
@@ -115,7 +115,7 @@ const brandLogos = [
     {
       id: 4,
       title: "Next steps",
-      teaser: "Advance your marketing skills.",
+      teaser: "Advance strategies and tools to elevate your marketing experties.",
       descriptionLines: [
         { text: "Explore advanced marketing strategies.", timeStamp: "10:10" },
         { text: "Utilize powerful tools for expertise.", timeStamp: "25:00" },
@@ -123,3 +123,47 @@ const brandLogos = [
       ],
     },
   ];
+
+
+
+
+
+
+
+  const AfterCourseCard = [
+    {
+      id: 1,
+      image: certficate1,
+      title: "Trade with confidence",
+      description: "Master risk managment and execution to take high probablity trades",
+    },
+    {
+      id: 2,
+      image: certficate1,
+      title: "Card1 Title 2",
+      description: "This is a brief description for Card 2.",
+    },
+
+
+
+  ]; export { AfterCourseCard };
+
+
+  
+  const AfterCourseCard2 = [
+    {
+      id: 1,
+      image: certficate1,
+      title: "Think and trade like professional",
+      description: "develop the mindset and discipline needed for long term success.",
+    },
+    {
+      id: 2,
+      image: certficate1,
+      title: "Car2d 2 Title 2",
+      description: "This is a brief description for Card 2.",
+    },
+
+
+
+  ]; export { AfterCourseCard2 };

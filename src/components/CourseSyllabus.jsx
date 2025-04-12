@@ -1,68 +1,22 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { courseSyllabus } from "../constants";
-import { gsap } from "gsap";
 
 const CourseSyllabus = () => {
-  const [openIndex, setOpenIndex] = useState(null); // Track currently open dropdown
-  const dropdownRefs = useRef({}); // Store references to dropdowns
+  const [openIndexes, setOpenIndexes] = useState([]);
 
-  // GSAP Animation Initialization
-  useEffect(() => {
-    Object.keys(dropdownRefs.current).forEach((key) => {
-      const dropdown = dropdownRefs.current[key];
-      if (dropdown) {
-        gsap.set(dropdown, { maxHeight: 0, opacity: 0, scale: 0.95 }); // Initial state
-      }
-    });
-  }, []);
-
-  const handleOpen = (index) => {
-    setOpenIndex(index);
-    const dropdown = dropdownRefs.current[index];
-    if (dropdown) {
-      gsap.killTweensOf(dropdown); // Stop any ongoing animation
-      gsap.to(dropdown, {
-        maxHeight: "300px", // Adjust to accommodate content
-        opacity: 1,
-        scale: 1, // Slight scale-up animation
-        duration: 0.4,
-        ease: "power2.out",
-      });
+  const handleToggle = (index) => {
+    if (openIndexes.includes(index)) {
+      setOpenIndexes(openIndexes.filter((i) => i !== index));
+    } else {
+      setOpenIndexes([...openIndexes, index]);
     }
-  };
-
-  const handleClose = (index) => {
-    const dropdown = dropdownRefs.current[index];
-    if (dropdown) {
-      gsap.killTweensOf(dropdown); // Stop any ongoing animation
-      gsap.to(dropdown, {
-        maxHeight: 0,
-        opacity: 0,
-        scale: 0.95, // Slight scale-down animation
-        duration: 0.3,
-        ease: "power2.in",
-      });
-      setOpenIndex(null); // Reset openIndex after closing
-    }
-  };
-
-  const handleMouseEnter = (index) => {
-    handleOpen(index); // Open dropdown on hover
-  };
-
-  const handleMouseLeave = (index) => {
-    setTimeout(() => {
-      if (openIndex === index) {
-        handleClose(index); // Close dropdown after a short delay
-      }
-    }, 100); // Add a small delay to prevent premature closure
   };
 
   return (
     <div className="text-white pt-16 bg-black">
       {/* Header Section */}
       <div className="text-center mb-10 px-3 md:px-20">
-        <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
+        <p className="text-xs lg:text-[15px] font-medium uppercase tracking-widest">
           SYLLABUS
         </p>
         <h1 className="text-[26px] lg:text-[45px] font-semibold py-6">
@@ -70,60 +24,74 @@ const CourseSyllabus = () => {
         </h1>
       </div>
 
-      {/* Syllabus Content */}
-      <div className="bg-black p-4 max-w-2xl mx-auto">
-        {courseSyllabus.map((course) => (
-          <div
-            key={course.id}
-            className="mb-2 relative"
-            onMouseEnter={() => handleMouseEnter(course.id)}
-            onMouseLeave={() => handleMouseLeave(course.id)}
-          >
-            {/* Course Button */}
-            <button
-              onClick={() =>
-                openIndex === course.id ? handleClose(course.id) : handleOpen(course.id)
-              }
-              className="w-full bg-yellow-300 text-black font-semibold py-2 px-4 rounded-lg flex items-center justify-between focus:outline-none hover:bg-yellow-400 transition-all duration-300"
-            >
-              <span className="flex flex-col items-start">
-                <span className="flex items-center">
-                  <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center mr-2">
+      {/* Syllabus */}
+      <div className="bg-black  lg:p-5 mx-auto lg:max-w-3xl ">
+        {courseSyllabus.map((course) => {
+          const isOpen = openIndexes.includes(course.id);
+          return (
+            <div key={course.id} className="mb-5  relative transition-all">
+              {/* Button */}
+              <button
+                onClick={() => handleToggle(course.id)}
+                className={`w-full ${
+                  isOpen
+                    ? "bg-yellow-400 rounded-t-2xl"
+                    : "bg-yellow-300 rounded-2xl"
+                } text-black font-semibold py-2 px-4 flex flex-col lg:flex-row items-start lg:items-center justify-between focus:outline-none hover:bg-yellow-400 transition-all duration-300`}
+              >
+                <div className="w-full text-left lg:flex lg:items-center">
+                  <p className="h-[40px] w-[40px] bg-black text-white text-center justify-center items-center rounded-full pt-3 text-sm font-bold mb-1 lg:hidden">
+                    {course.id}
+                  </p>
+                  <span className="hidden lg:flex w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] text-[15px] lg:text-[20px] bg-black text-white rounded-full items-center justify-center lg:mr-8">
                     {course.id}
                   </span>
-                  {course.title}
+                  <div>
+                    <p className="text-[20px] font-semibold">{course.title}</p>
+                    <p className="text-[12px] lg:text-[16px] font-semibold text-gray-800 leading-[1.1] mb-2">
+                      {course.teaser || "No teaser available"}
+                    </p>
+                  </div>
+                </div>
+                <span
+                  className={`absolute right-4 top-3 text-[30px] font-semibold lg:static  transition-opacity duration-900 ${
+                    isOpen ? "rotate-180 opacity-100" : "-rotate-360 opacity-100"
+                  }`}
+                >
+                  {isOpen ? "-" : "+"}
                 </span>
-                <span className="mt-1 text-sm text-gray-800">
-                  {course.teaser || "No teaser available"}
-                </span>
-              </span>
-              {/* Toggle Icon */}
-              <span className="text-xl font-bold">
-                {openIndex === course.id ? "-" : "+"}
-              </span>
-            </button>
+              </button>
 
-            {/* Full Description Dropdown */}
-            <div
-              ref={(el) => (dropdownRefs.current[course.id] = el)}
-              className="bg-yellow-300 text-black rounded-b-lg mt-1 overflow-hidden"
-            >
-              {openIndex === course.id && (
-                <div className="p-4">
+              {/* Description */}
+              <div
+                className={`bg-yellow-300 text-black overflow-hidden transition-all duration-800 ease-in-out ${
+                  isOpen ? "rounded-b-2xl max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="divide-y divide-black">
                   {course.descriptionLines.map((line, index) => (
                     <div
                       key={index}
-                      className="w-full border-t border-b border-black py-2 flex justify-between items-center"
+                      className="text-[10px] py-2 px-2 lg:px-6 flex justify-between text-sm lg:text-[15px]"
                     >
-                      <p className="text-left p-1">{line.text}</p>
-                      <span className="text-right text-gray-700 text-xs">{line.timeStamp}</span>
+                      <p className="text-left">{line.text}</p>
+                      <span className="text-right text-gray-700">
+                        {line.timeStamp}
+                      </span>
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
+      </div>
+
+      {/* Enroll Button */}
+      <div className="w-full pt-6 flex justify-center lg:pt-8">
+        <button className="bg-yellow-400 text-black text-sm lg:text-[15px] font-semibold px-4 py-2 lg:px-6 lg:py-3 rounded-lg shadow-md hover:bg-yellow-300 transition duration-300">
+          Enroll now
+        </button>
       </div>
     </div>
   );

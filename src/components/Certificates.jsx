@@ -86,7 +86,7 @@ const Certificates = () => {
             <img
               key={i}
               src={cert}
-              alt={`Certificate ${i + 1}`} // Fixed syntax error in string interpolation
+              alt={`Certificate ${i + 1}`}
               loading="lazy"
               className="h-48 md:h-80 lg:h-60 object-contain rounded-lg shadow-lg"
             />

@@ -10,6 +10,7 @@ import HeroSectionWrapper from "./uti/HeroSectionWrapper";
 import VideoComp from "./components/VideoComp";
 import DiscordIntro from "./components/DiscordIntro";
 import CourseSyllabus from "./components/CourseSyllabus";
+import AfterCourseCompletion from "./components/AfterCourseCompletion";
 
 const App = () => {
   return (
@@ -41,6 +42,10 @@ const App = () => {
 <CourseSyllabus/>
 </LayoutWrapper>
 
+<LayoutWrapper>
+<AfterCourseCompletion/>
+
+</LayoutWrapper>
     </div>
   );
 };
