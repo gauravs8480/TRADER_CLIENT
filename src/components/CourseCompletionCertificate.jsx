@@ -3,7 +3,7 @@ import { certficate1 } from '../assets';
 
 const CourseCompletionCertificate = () => {
   return (
-    <div className="bg-black text-white pt-16">
+    <div className="bg-black text-white pt-16 pb-15">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 4xl:px-60">
 
         {/* TEXT SECTION - Moved up with margin-top */}

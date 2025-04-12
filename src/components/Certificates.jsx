@@ -58,7 +58,7 @@ const Certificates = () => {
       {/* Heading */}
       <div className="text-center mb-10 px-3 md:px-20">
         <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
-          LEARN. EXECUTE. WIN.
+          LEARN . EXECUTE . WIN
         </p>
         <h1 className="text-[26px] lg:text-[45px] font-semibold py-6">
           Results that speak louder{" "}

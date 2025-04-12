@@ -35,9 +35,9 @@ const CourseIntro = () => {
         {/* Video with Thumbnail */}
         <video
           ref={videoRef}
-          className="w-full h-[300px]  object-cover sm:h-auto  rounded-2xl md:rounded-[40px]  shadow-lg"
+          className="w-full h-[300px]  object-cover sm:h-auto  rounded-2xl md:rounded-[15px]  shadow-lg"
           style={{
-            maxWidth: "1800px", // Increased max width for xl screens
+            maxWidth: "1050px", // Increased max width for xl screens
             maxHeight: "900px", // Proportional max height for xl screens
           }}
           poster="your-thumbnail-image-url.jpg"

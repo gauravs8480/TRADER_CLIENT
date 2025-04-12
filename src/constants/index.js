@@ -61,16 +61,7 @@ const brandLogos = [
       description: "Get insider know how and securing pay.",
       image: certficate4,
     },
-    {
-      title: "Exclusive",
-      description: "Get insider know how and securing pay.",
-      image: certficate4,
-    },
-    {
-      title: "Exclusive prop firm insights",
-      description: "Get insider knowledge on passing challenges and securing payouts.",
-      image: certficate1,
-    },
+
 
 
 
