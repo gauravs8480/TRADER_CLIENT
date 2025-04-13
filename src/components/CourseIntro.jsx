@@ -35,10 +35,10 @@ const CourseIntro = () => {
         {/* Video with Thumbnail */}
         <video
           ref={videoRef}
-          className="w-full h-[300px]  object-cover sm:h-auto  rounded-2xl md:rounded-[15px]  shadow-lg"
+          className=" w-[375px] h-[350px] lg:w-[1100px]  lg:h-auto   4xl:w-[16600px] 4xl:h-[1000px] object-cover sm:h-auto  rounded-2xl md:rounded-[15px]  shadow-lg"
           style={{
-            maxWidth: "1050px", // Increased max width for xl screens
-            maxHeight: "900px", // Proportional max height for xl screens
+            maxWidth: "1600px", // Increased max width for xl screens
+            maxHeight: "1000px", // Proportional max height for xl screens
           }}
           poster="your-thumbnail-image-url.jpg"
           onEnded={handleVideoEnd}

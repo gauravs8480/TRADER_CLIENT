@@ -158,3 +158,77 @@ const brandLogos = [
 
 
   ]; export { AfterCourseCard2 };
+
+
+
+
+  const subscriptionPlans = [
+    {
+      id: 1,
+      title: "Basic Plan",
+      description:"hey this is a small description ",
+      price: "$199 USD",
+      features: ["All 6 chapters", "30+ hours of training", "24+ video lessons", "Access to Slack"],
+      buttonText: "Subscribe now",
+    },
+    {
+      id: 2,
+      title: "Pro Plan",
+      description:"hey this is a small description ",
+      price: "$299 USD",
+      features: ["All 10 chapters", "50+ hours of training", "50+ video lessons", "1-on-1 mentoring"],
+      buttonText: "Subscribe now",
+    },
+    {
+      id: 3,
+      title: "Advanced Plan",
+      description:"hey this is a small description ",
+      price: "$399 USD",
+      features: ["All 15 chapters", "80+ hours of training", "100+ video lessons", "Community access"],
+      buttonText: "Subscribe now",
+    },
+    {
+      id: 4,
+      title: "Premium Plan",
+      description:"hey this is a small description ",
+      price: "$499 USD",
+      features: ["All modules unlocked", "100+ hours of training", "Unlimited lessons", "Dedicated support"],
+      buttonText: "Subscribe now",
+    },
+  ]; export { subscriptionPlans };
+
+
+
+
+  export const faqdata = [
+    {
+      id: 1,
+      question: "Who is this course for?",
+      answer: "This course is for traders who want to get funded, stay consistently profitable, and level up their skills. Whether you're struggling with prop firm challenges or looking for a structured approach, this course is designed to give you an edge.",
+    },
+    {
+      id: 2,
+      question: "What’s the difference between the course and the Discord community?",
+      answer: "The course is a structured learning program that teaches you everything from strategy to risk management and funding. The Discord community is where you get real-time trade discussions, mentorship, and market insights. 📌 Course buyers get lifetime access to Discord for free! 📌 If you buy only Discord, you’ll get an exclusive discount on the course inside the community.",
+    },
+    {
+      id: 3,
+      question: "How is this course different from others?",
+      answer: "This course isn’t just theory—it’s based on real prop firm payouts and proven strategies. No fluff, no outdated concepts—just practical knowledge that actually works in today’s trading world.",
+    },
+    {
+      id: 4,
+      question: "Will I get one-on-one mentorship?",
+      answer: "Yes! Inside our Discord community, you’ll have access to direct mentorship, trade reviews, and Q&A sessions to help you refine your trading approach.",
+    },
+    {
+      id: 5,
+      question: "Will I get a certificate after completing the course?",
+      answer: "Yes! Once you complete the course, you'll receive an official verified certificate to showcase your achievement.",
+    },
+    {
+      id: 6,
+      question: "How will this course help me in the long run?",
+      answer: "Beyond just getting funded, this course teaches you how to sustain profits, manage risks, and scale your trading career. With access to a strong community and ongoing updates, you’ll always stay ahead in the game.",
+    },
+  ]; 

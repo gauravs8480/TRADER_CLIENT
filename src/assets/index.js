@@ -28,8 +28,8 @@ import certficate16 from "./Certificate6.jpg";
 import certficate17 from "./Certificate7.png";
 import certficate18 from "./Certificate8.png";
 import certficate19 from "./Certificate9.png"
-
-
+import subicon from "./Cicon.png";
+import subcheck from "./SubCheck.svg";
 
 
 
@@ -67,7 +67,8 @@ export {
   certficate18,
   certficate19,
 
-
+subicon,
+subcheck,
   MentorPic,
   MentorPic2,
 };

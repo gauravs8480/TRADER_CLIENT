@@ -50,7 +50,7 @@ const BrandLogos = () => {
   };
 
   return (
-    <div className="bg-black text-white py-10 overflow-hidden">
+    <div className="bg-black text-white py-10 overflow-hidden pt-15">
       <div className="text-center mb-10 px-3 md:px-20">
         <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
           FUNDED WITH TOP PROP FIRMS WORLDWIDE

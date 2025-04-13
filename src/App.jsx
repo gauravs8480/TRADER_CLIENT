@@ -1,16 +1,19 @@
 import React from "react";
-import HeroSection from "./components/HeroSection";
+
 import BrandsAndCertificates from "./components/BrandAndCertificates";
 import Certificates from "./components/Certificates";
 import CourseIntro from "./components/CourseIntro";
 import Mentor from "./components/Mentor";
 import CourseCompletionCertificate from "./components/CourseCompletionCertificate";
 import LayoutWrapper from "./uti/LayoutWrapper"; // Adjust path
-import HeroSectionWrapper from "./uti/HeroSectionWrapper";
+
 import VideoComp from "./components/VideoComp";
 import DiscordIntro from "./components/DiscordIntro";
 import CourseSyllabus from "./components/CourseSyllabus";
 import AfterCourseCompletion from "./components/AfterCourseCompletion";
+import Subscription from "./components/Subscription";
+import CourseFaq from "./components/CourseFaq";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -46,6 +49,20 @@ const App = () => {
 <AfterCourseCompletion/>
 
 </LayoutWrapper>
+
+<LayoutWrapper>
+  <Subscription/>
+</LayoutWrapper>
+
+
+<LayoutWrapper>
+
+  <CourseFaq/>
+</LayoutWrapper>
+
+<Footer/>
+
+
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { FaInstagram, FaDribbble } from "react-icons/fa";
 
 const Mentor = () => {
   return (
-    <div className="bg-black text-white flex flex-col lg:flex-row justify-between  4xl:px-60 items-center   pt-15 gap-12 ">
+    <div className="bg-black text-white flex flex-col lg:flex-row justify-between  4xl:px-50 items-center   pt-15 gap-12 ">
       
       {/* Left Text Section */}
       <div className="w-full lg:w-[130%] flex flex-col gap-6">

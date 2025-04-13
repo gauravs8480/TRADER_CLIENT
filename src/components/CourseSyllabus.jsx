@@ -47,8 +47,8 @@ const CourseSyllabus = () => {
                     {course.id}
                   </span>
                   <div>
-                    <p className="text-[20px] font-semibold">{course.title}</p>
-                    <p className="text-[12px] lg:text-[16px] font-semibold text-gray-800 leading-[1.1] mb-2">
+                    <p className="text-[25px]  lg:text-[25px] font-semibold mt-5">{course.title}</p>
+                    <p className="text-[15px] lg:text-[16px] font-semibold text-gray-800 leading-[1.1] mb-5">
                       {course.teaser || "No teaser available"}
                     </p>
                   </div>
