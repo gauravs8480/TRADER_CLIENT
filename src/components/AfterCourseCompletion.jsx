@@ -11,7 +11,7 @@ const AfterCourseCompletion = () => {
         </p>
         <h1 className="text-[26px] lg:text-[45px] font-semibold py-6">
           After the{" "}
-          <span className="text-yellow-400">course</span> You'll be able to...
+          <span className="text-yellow-400">course</span> You'll <br className="lg:hidden"/> be able to...
         </h1>
         <p className="text-gray-300 text-[13px] md:font-medium lg:text-[15px] ">
           This isn't just another trading course - it's your
