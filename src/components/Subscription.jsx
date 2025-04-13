@@ -49,7 +49,7 @@ const Subscription = () => {
               <div className="w-6 h-6 3xl:w-10 3xl:h-10  rounded-full">
                 <img
                   src={subcheck}
-                  className="object-contain w-full h-full  brightness-0  invert "
+                  className="object-contain w-full h-full rounded-full  "
                   alt=""
                 />
               </div>      {feature}
