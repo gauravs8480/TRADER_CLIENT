@@ -17,7 +17,7 @@ const Subscription = () => {
       </div>
 
       {/* Grid layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12 4xl:gap-y-20 gap-x-4 mobile-s:px-2 mobile-m:px-3 px-4 4xl:max-w-[1800px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12 3xl:gap-y-15  4xl:gap-y-20 gap-x-4 mobile-s:px-2 mobile-m:px-3 px-4 4xl:max-w-[1800px] mx-auto">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
@@ -43,8 +43,8 @@ const Subscription = () => {
               mobile-m:mx-auto
               ${
                 index % 2 === 0
-                  ? "mobile-s:ml-0 lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px] xl:ml-[50px]"
-                  : "mobile-s:ml-0 lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px] xl:ml-[10px]"
+                  ? "mobile-s:ml-0 lg:ml-[100px] 3xl:ml-[70px] 4xl:ml-[140px] xl:ml-[40px]"
+                  : "mobile-s:ml-0 lg:ml-[30px] 3xl:ml-[10px] 4xl:ml-[30px] xl:ml-[10px]"
               }`}
           >
             {/* Icon & Price */}

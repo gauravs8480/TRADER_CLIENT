@@ -6,7 +6,7 @@ import React from "react";
  const CourseCompletionCertificate = () => {
   return (
     <div className="bg-black text-white pt-16 pb-15">
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 4xl:px-50">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 xl:px-20 4xl:px-50">
 
         {/* TEXT SECTION - Moved up with margin-top */}
         <div className=" max-w-lg w-full text-left order-1 lg:order-2 lh:-mt-2 lg:pl-27 ">
