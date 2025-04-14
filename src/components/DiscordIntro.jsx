@@ -61,7 +61,7 @@ const DiscordIntro = () => {
         {cardsData.map((card, index) => (
           <div
             key={index}
-            className=" w-[280px] h-[341px]  lg:w-[350px] lg:h-[425px]      3xl:w-[470px] 3xl:h-[608px] rounded-[20px] shadow-lg overflow-hidden relative bg-white flex-shrink-0"
+            className=" w-[280px] h-[341px]  lg:w-[350px] lg:h-[425px]     3xl:w-[470px] 3xl:h-[608px] rounded-[20px] shadow-lg overflow-hidden relative bg-white flex-shrink-0"
           >
             {/* Gradient Shadow from Top to Down */}
             <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-black/90 to-transparent z-10 pointer-events-none" />

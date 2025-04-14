@@ -25,11 +25,11 @@ const CourseSyllabus = () => {
       </div>
 
       {/* Syllabus */}
-      <div className="bg-black  lg:p-5 mx-auto lg:max-w-3xl ">
+      <div className="bg-black lg:p-5 mx-auto lg:max-w-3xl 3xl:max-w-4xl">
         {courseSyllabus.map((course) => {
           const isOpen = openIndexes.includes(course.id);
           return (
-            <div key={course.id} className="mb-5  relative transition-all">
+            <div key={course.id} className="mb-5 relative transition-all">
               {/* Button */}
               <button
                 onClick={() => handleToggle(course.id)}
@@ -43,22 +43,41 @@ const CourseSyllabus = () => {
                   <p className="h-[40px] w-[40px] bg-black text-white text-center justify-center items-center rounded-full pt-3 text-sm font-bold mb-1 lg:hidden">
                     {course.id}
                   </p>
-                  <span className="hidden lg:flex w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] text-[15px] lg:text-[20px] bg-black text-white rounded-full items-center justify-center lg:mr-8">
+                  <span className="hidden 3xl:w-[60px] 3xl:h-[60px] lg:flex w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] text-[15px] lg:text-[20px] bg-black text-white rounded-full items-center justify-center lg:mr-8">
                     {course.id}
                   </span>
                   <div>
-                    <p className="text-[25px]  lg:text-[25px] font-semibold mt-5">{course.title}</p>
+                    <p className="text-[25px] lg:text-[25px] 3xl:text-[30px] font-semibold mt-5">
+                      {course.title}
+                    </p>
                     <p className="text-[15px] lg:text-[16px] font-semibold text-gray-800 leading-[1.1] mb-5">
                       {course.teaser || "No teaser available"}
                     </p>
                   </div>
                 </div>
-                <span
-                  className={`absolute right-4 top-3 text-[30px] font-semibold lg:static  transition-opacity duration-900 ${
-                    isOpen ? "rotate-180 opacity-100" : "-rotate-360 opacity-100"
-                  }`}
-                >
-                  {isOpen ? "-" : "+"}
+                <span className="absolute right-4 top-3 lg:static">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-black"
+                  >
+                    <line
+                      x1="12"
+                      y1="5"
+                      x2="12"
+                      y2="19"
+                      className="transition-transform duration-300"
+                      transform={isOpen ? "rotate(90 12 12)" : "rotate(0 12 12)"}
+                    />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
                 </span>
               </button>
 
@@ -72,12 +91,10 @@ const CourseSyllabus = () => {
                   {course.descriptionLines.map((line, index) => (
                     <div
                       key={index}
-                      className="text-[10px] py-2 px-2 lg:px-6 flex justify-between text-sm lg:text-[15px]"
+                      className="text-[10px] lg:py-6 px-2 lg:px-6 flex justify-between text-sm lg:text-[20px] 4xl:py-8 4xl:text-[25px]"
                     >
                       <p className="text-left">{line.text}</p>
-                      <span className="text-right text-gray-700">
-                        {line.timeStamp}
-                      </span>
+                      <span className="text-right text-gray-700">{line.timeStamp}</span>
                     </div>
                   ))}
                 </div>

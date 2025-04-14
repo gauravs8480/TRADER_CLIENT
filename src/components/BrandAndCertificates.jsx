@@ -11,29 +11,34 @@ import {
   brandlogo7,
 } from "../assets";
 
-const BrandLogos = () => {
-  const animationRef = useRef(null);
-  const sliderRef = useRef(null);
+const logos = [
+  brandlogo1,
+  brandlogo2,
+  brandlogo3,
+  brandlogo4,
+  brandlogo5,
+  brandlogo6,
+  brandlogo7,
+];
 
-  const brandLogos = [
-    brandlogo1,
-    brandlogo2,
-    brandlogo3,
-    brandlogo4,
-    brandlogo5,
-    brandlogo6,
-    brandlogo7,
-  ];
+const BrandLogos = () => {
+  const sliderRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
+    const distance = slider.scrollWidth / 2;
+
     animationRef.current = gsap.to(slider, {
-      xPercent: -50,
-      duration: 5,
+      x: -distance,
+      duration: 20,
+      ease: "none",
       repeat: -1,
-      ease: "linear",
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x) % distance),
+      },
     });
 
     return () => {
@@ -50,7 +55,7 @@ const BrandLogos = () => {
   };
 
   return (
-    <div className="bg-black text-white py-10 overflow-hidden pt-15">
+    <div className="bg-black text-white py-10 overflow-hidden">
       <div className="text-center mb-10 px-3 md:px-20">
         <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
           FUNDED WITH TOP PROP FIRMS WORLDWIDE
@@ -58,23 +63,22 @@ const BrandLogos = () => {
       </div>
 
       <div
-        className="relative overflow-hidden w-full mx-auto h-auto"
+        className="relative overflow-hidden w-full"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {/* Gradient Shadows */}
+        {/* Gradient shadows for fade effect */}
         <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
 
-        {/* Slider */}
-        <div className="flex w-max" ref={sliderRef} style={{ willChange: "transform" }}>
-          {[...brandLogos, ...brandLogos].map((logo, index) => (
+        {/* Logo slider */}
+        <div className="flex w-max will-change-transform" ref={sliderRef}>
+          {[...Array(3)].flatMap(() => logos).map((logo, i) => (
             <img
-              key={index}
+              key={i}
               src={logo}
-              alt={`Brand Logo ${index + 1}`}
-              loading="lazy"
-              className="h-15 w-20 object-contain mx-3 brightness-0 invert"
+              alt={`logo-${i}`}
+              className="h-16 w-20 object-contain mx-6 brightness-0 invert"
             />
           ))}
         </div>

@@ -232,3 +232,89 @@ const brandLogos = [
       answer: "Beyond just getting funded, this course teaches you how to sustain profits, manage risks, and scale your trading career. With access to a strong community and ongoing updates, you’ll always stay ahead in the game.",
     },
   ]; 
+
+
+
+  const TestimonialsReview = [
+    {
+      id: 1,
+      name: "Natasha L.",
+      title: "Marketing Consultant",
+      stars: 5,
+      image: certficate1,
+      testimonial: " adipisicing elit. Dicta, ad architecto animi repellendus cupiditate explicabo et repellat blanditiis nam voluptates beatae veniam ducimus, quis, magnam in placeat quasi? Et, quae?",
+    },
+    {
+      id: 2,
+      name: "John D.",
+      title: "Web Developer",
+      stars: 3,
+      image: certficate1,
+      testimonial: "Good, but could be better.",
+    },
+    {
+      id: 3,
+      name: "Emily R.",
+      title: "Graphic Designer",
+      stars: 4,
+      image: certficate1,
+      testimonial: "Very satisfied with the service!",
+    },
+  ];
+  
+  export default TestimonialsReview ;
+
+
+  export const TestimonialsReview2 = [
+    {
+      id: 4,
+      name: "Michael S.",
+      title: "SEO Specialist",
+      stars: 4,
+      testimonial: "Excellent support and great results!",
+      image: certficate1,
+    },
+    {
+      id: 5,
+      name: "Sarah K.",
+      title: "Content Creator",
+      stars: 5,
+      testimonial: "Highly recommend this service to everyone!",
+      image: "https://via.placeholder.com/40",
+    },
+    {
+      id: 6,
+      name: "David P.",
+      title: "Digital Marketer",
+      stars: 3,
+      testimonial: " Decent experience, needs some improvement.",
+      image: certficate1,
+    },
+  ];
+  
+  export const TestimonialsReview3 = [
+    {
+      id: 7,
+      name: "Laura T.",
+      title: "UI/UX Designer",
+      stars: 5,
+      testimonial: "Amazing platform, very user-friendly!",
+      image: certficate1,
+    },
+    {
+      id: 8,
+      name: "James B.",
+      title: "Product Manager",
+      stars: 4,
+      testimonial: "Great value for the price paid.",
+      image:certficate1,
+    },
+    {
+      id: 9,
+      name: "Anna C.",
+      title: "Business Analyst",
+      stars: 3,
+      testimonial: "Good, but could use more features.",
+      image: certficate1,
+    },
+  ];

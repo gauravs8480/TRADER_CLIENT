@@ -14,6 +14,7 @@ import AfterCourseCompletion from "./components/AfterCourseCompletion";
 import Subscription from "./components/Subscription";
 import CourseFaq from "./components/CourseFaq";
 import Footer from "./components/Footer";
+import Testimonials from "./components/Testimonials";
 
 const App = () => {
   return (
@@ -48,6 +49,10 @@ const App = () => {
 <LayoutWrapper>
 <AfterCourseCompletion/>
 
+</LayoutWrapper>
+
+<LayoutWrapper>
+  <Testimonials/>
 </LayoutWrapper>
 
 <LayoutWrapper>

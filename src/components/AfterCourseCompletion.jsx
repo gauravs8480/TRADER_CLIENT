@@ -29,7 +29,7 @@ const AfterCourseCompletion = () => {
               className="   w-[375px] h-[341px] lg:w-[500px] lg:h-[500px] 3xl:w-[590px] 3xl:h-[600px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5"
             >
               {/* Image Section */}
-              <div className="h-[235px] lg:h-[350px] 3xl:h-[400px] overflow-hidden px-2 pt-2 lg:px-6 lg:pt-6 3xl:px-4 3xl:pt-4">
+              <div className="h-[235px] lg:h-[350px] 3xl:h-[400px] overflow-hidden px-2 pt-2 lg:px-6 lg:pt-6 3xl:px-4 3xl:pt-4  4xl:pt-6 4xl:px-6  ">
                 <img
                   src={card.image}
                   alt={`Card image ${card.id}`}
@@ -39,8 +39,8 @@ const AfterCourseCompletion = () => {
               </div>
 
               {/* Text Section */}
-              <div className="w-full h-[200px] px-4 bg-opacity-90 text-black lg:px-6 3xl:px-5 4xl:  flex flex-col">
-                <h2 className="text-[21px] pt-2 lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6  4xl: font-semibold">
+              <div className="w-full h-[200px] px-4 bg-opacity-90 text-black lg:px-6 3xl:px-5   flex flex-col">
+                <h2 className="text-[21px] pt-2 lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6   font-semibold">
                   {card.title}
                 </h2>
                 <p className="text-[12px] pt-2 lg:text-[16px] 3xl:text-[20px] lg:pt-2">
@@ -52,14 +52,14 @@ const AfterCourseCompletion = () => {
         </div>
 
         {/* Card Section 2 */}
-        <div className="flex flex-col gap-4  lg:justify-end lg:mt-40 3xl:mt-65 mb-5  ">
+        <div className="flex flex-col gap-4  lg:justify-end lg:mt-40 3xl:mt-65 mb-5 4xl:pr-2 ">
           {AfterCourseCard.map((card) => (
             <div
               key={card.id}
               className="w-[375px] h-[341px]  lg:w-[500px] lg:h-[500px] 3xl:w-[590px] 3xl:h-[600px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5"
             >
               {/* Image Section */}
-              <div className="h-[235px] lg:h-[350px] 3xl:h-[400px] overflow-hidden px-4 pt-4 lg:px-3 lg:pt-3 3xl:px-4 3xl:pt-4">
+              <div className="h-[235px] lg:h-[350px] 3xl:h-[400px] overflow-hidden px-4 pt-4 lg:px-3 lg:pt-3 3xl:px-4 3xl:pt-4 4xl:px-6 4xl:pt-6">
                 <img
                   src={card.image}
                   alt={`Card image ${card.id}`}
@@ -69,7 +69,7 @@ const AfterCourseCompletion = () => {
               </div>
 
               {/* Text Section */}
-              <div className="w-full h-[200px] px-2 bg-opacity-90 text-black lg:px-6 3xl:px-8 4xl:  flex flex-col">
+              <div className="w-full h-[200px] px-2 bg-opacity-90 text-black lg:px-6 3xl:px-8   flex flex-col">
                 <h2 className="text-[21px] pt-2 lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-8 font-semibold">
                   {card.title}
                 </h2>
