@@ -50,7 +50,7 @@ const CourseSyllabus = () => {
                     <p className="text-[25px] lg:text-[25px] 3xl:text-[30px] font-semibold mt-5">
                       {course.title}
                     </p>
-                    <p className="text-[15px] lg:text-[16px] font-semibold text-gray-800 leading-[1.1] mb-5">
+                    <p className="text-[15px] lg:text-[16px] 3xl:text-[20px] font-semibold text-gray-800 leading-[1.1] mb-5">
                       {course.teaser || "No teaser available"}
                     </p>
                   </div>
@@ -113,5 +113,5 @@ const CourseSyllabus = () => {
     </div>
   );
 };
-
+                                                                                                                                                                                                                                                                                                                                                                                                          
 export default CourseSyllabus;

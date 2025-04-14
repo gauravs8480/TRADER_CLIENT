@@ -166,7 +166,7 @@ const brandLogos = [
     {
       id: 1,
       title: "Basic Plan",
-      description:"hey this is a small description ",
+      description:"Lorem ipsum dolor  massa d amet consectetur pellentesque scelerisque fermentum bibendum ipsum massa massa ",
       price: "$199 USD",
       features: ["All 6 chapters", "30+ hours of training", "24+ video lessons", "Access to Slack"],
       buttonText: "Subscribe now",
@@ -174,7 +174,7 @@ const brandLogos = [
     {
       id: 2,
       title: "Pro Plan",
-      description:"hey this is a small description ",
+      description:"Lorem ipsum dolor  massa d amet consectetur pellentesque scelerisque fermentum bibendum ipsum massa massa ",
       price: "$299 USD",
       features: ["All 10 chapters", "50+ hours of training", "50+ video lessons", "1-on-1 mentoring"],
       buttonText: "Subscribe now",
@@ -182,7 +182,7 @@ const brandLogos = [
     {
       id: 3,
       title: "Advanced Plan",
-      description:"hey this is a small description ",
+      description:"Lorem ipsum dolor  massa d amet consectetur pellentesque scelerisque fermentum bibendum ipsum massa massa ",
       price: "$399 USD",
       features: ["All 15 chapters", "80+ hours of training", "100+ video lessons", "Community access"],
       buttonText: "Subscribe now",
@@ -190,7 +190,7 @@ const brandLogos = [
     {
       id: 4,
       title: "Premium Plan",
-      description:"hey this is a small description ",
+      description:"Lorem ipsum dolor  massa d amet consectetur pellentesque scelerisque fermentum bibendum ipsum massa massa ",
       price: "$499 USD",
       features: ["All modules unlocked", "100+ hours of training", "Unlimited lessons", "Dedicated support"],
       buttonText: "Subscribe now",

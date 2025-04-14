@@ -40,9 +40,9 @@ const CourseFaq = () => {
                   isOpen
                     ? "bg-yellow-400 rounded-t-2xl"
                     : "bg-yellow-300 rounded-2xl"
-                } text-black font-semibold py-5 lg:py-6 px-4 lg:px-6 flex items-center justify-between focus:outline-none hover:bg-yellow-400 transition-all duration-300`}
+                } text-black font-semibold py-5 lg:py-6 4xl:py-8 px-4 lg:px-6 flex items-center justify-between focus:outline-none hover:bg-yellow-400 transition-all duration-300`}
               >
-                <span className="text-left text-[15px] lg:text-[20px]  font-semibold">
+                <span className="text-left text-[15px] lg:text-[20px]   font-semibold">
                   {faq.question}
                 </span>
                 <span className="ml-4">
@@ -77,7 +77,7 @@ const CourseFaq = () => {
                   isOpen ? "rounded-b-2xl max-h-[400px] opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="text-left px-4 py-4 lg:py-8 lg:px-6 text-sm lg:text-[20px] 4xl:text-[25px]">
+                <div className="text-left px-4 py-4 lg:py-8 lg:px-6 text-sm lg:text-[20px] ">
                   {faq.answer}
                 </div>
               </div>
