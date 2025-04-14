@@ -51,7 +51,7 @@ const HeroSection = () => {
 
           {/* Card Section */}
           <div
-            className=" items-center w-[300px] h-[145px] pt-4 lg:pt-0 mt-[100px] mobile-s:mt-[100px] 
+            className=" items-center w-[300px] h-[145px] pt-4 lg:pt-0 mt-[100px] mobile-s:mt-[50px] 
               lg:w-[350px] lg:h-[130px]  
               bg-white/10 backdrop-blur-sm flex lg:pl-4 lg:items-start flex-col rounded-lg shadow-lg lg:mt-55 3xl:mt-65   3xl:w-[350px] 3xl:h-[155px] 3xl:pl-4 3xl:justify-start 3xl:items-start
             "
