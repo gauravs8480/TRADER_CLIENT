@@ -26,15 +26,19 @@ const App = () => {
       <LayoutWrapper>
         <BrandsAndCertificates />
       </LayoutWrapper>
+
       <LayoutWrapper>
         <Certificates />
       </LayoutWrapper>
+
       <LayoutWrapper>
         <CourseIntro />
       </LayoutWrapper>
+
       <LayoutWrapper>
         <Mentor />
       </LayoutWrapper>
+
       <LayoutWrapper>
         <CourseCompletionCertificate />
       </LayoutWrapper>

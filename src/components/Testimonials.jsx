@@ -3,12 +3,11 @@ import { FaStar } from "react-icons/fa";
 import gsap from "gsap";
 import TestimonialsReview, { TestimonialsReview2, TestimonialsReview3 } from "../constants";
 
-// Testimonial Card Component
 const TestimonialCard = ({ review }) => (
-  <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[350px] 3xl:w-[400px]">
+  <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[350px] 3xl:w-[435px] 4xl:w-[550px]">
     <div className="flex-1">
       <div className="flex mb-4">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(7)].map((_, i) => (
           <FaStar
             key={i}
             className={i < review.stars ? "text-black" : "text-gray-300"}
@@ -18,7 +17,7 @@ const TestimonialCard = ({ review }) => (
       </div>
       <p className="lg:text-[15px] leading-relaxed text-left mb-4">{review.testimonial}</p>
     </div>
-    <div className="mt-auto flex items-center justify-between  pt-2 ">
+    <div className="mt-auto flex items-center justify-between pt-2">
       <div className="flex items-center">
         <div className="w-10 h-10 overflow-hidden bg-gray-300 rounded-full mr-2">
           <img src={review.image} alt="Profile" className="w-full h-full object-cover" />
@@ -39,22 +38,24 @@ const Testimonials = () => {
 
   useEffect(() => {
     const animateCol = (ref, dir = "up") => {
-      const timeline = gsap.timeline({ repeat: -1 });
-      const from = dir === "up" ? 0 : -50;
-      const to = dir === "up" ? -50 : 0;
+      const container = ref.current;
+      const inner = container.querySelector(".inner");
+      const itemHeight = inner.offsetHeight / 2;
 
+      const from = dir === "up" ? 0 : -itemHeight;
+      const to = dir === "up" ? -itemHeight : 0;
+
+      const timeline = gsap.timeline({ repeat: -1 });
       timeline.fromTo(
-        ref.current,
-        { yPercent: from },
+        inner,
+        { y: from },
         {
-          yPercent: to,
-          duration: 25,
+          y: to,
+          duration: 30,
           ease: "none",
         }
       );
 
-      // Hover slowdown
-      const container = ref.current.parentNode;
       const slowDown = () => timeline.timeScale(0.3);
       const speedUp = () => timeline.timeScale(1);
 
@@ -78,7 +79,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="bg-black text-white py-16 px-4 ">
+    <div className="bg-black text-white py-16 px-4">
       <div className="text-center mb-10">
         <p className="text-xs uppercase tracking-widest">Testimonials</p>
         <h1 className="text-3xl lg:text-5xl font-semibold py-6">
@@ -86,35 +87,28 @@ const Testimonials = () => {
         </h1>
       </div>
 
-      <div className="max-w-7xl mx-auto relative">
-        {/* Top Shadow */}
-        <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-black/90 to-transparent z-10 pointer-events-none" />
+      <div className="max-w-7xl 3xl:max-w-[1400px] mx-auto relative 4xl:max-w-[1800px]">
+        <div className="absolute top-0 left-0 w-full h-16 4xl:h-24 bg-gradient-to-b from-black/90 to-transparent z-10 pointer-events-none" />
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 overflow-hidden">
-          {/* Column 1 */}
-          <div className="h-[600px] overflow-hidden">
-            <div ref={col1Ref} className="flex flex-col gap-6 will-change-transform">
+          <div ref={col1Ref} className="h-[600px] 4xl:h-[900px] overflow-hidden">
+            <div className="inner flex flex-col gap-6 will-change-transform">
               {duplicate(TestimonialsReview).map((review, i) => (
                 <TestimonialCard key={`col1-${i}`} review={review} />
               ))}
             </div>
           </div>
 
-          {/* Column 2 (scrolls down, fixed spacing) */}
-          <div className="hidden lg:block h-[600px] overflow-hidden">
-            <div
-              ref={col2Ref}
-              className="flex flex-col-reverse gap-6 flex-nowrap will-change-transform"
-            >
+          <div ref={col2Ref} className="hidden lg:block h-[600px] 4xl:h-[900px] overflow-hidden">
+            <div className="inner flex flex-col-reverse gap-6 will-change-transform">
               {duplicate(TestimonialsReview2).map((review, i) => (
                 <TestimonialCard key={`col2-${i}`} review={review} />
               ))}
             </div>
           </div>
 
-          {/* Column 3 */}
-          <div className="hidden lg:block h-[600px] overflow-hidden">
-            <div ref={col3Ref} className="flex flex-col gap-6 will-change-transform">
+          <div ref={col3Ref} className="hidden lg:block h-[600px] 4xl:h-[900px] overflow-hidden">
+            <div className="inner flex flex-col gap-6 will-change-transform">
               {duplicate(TestimonialsReview3).map((review, i) => (
                 <TestimonialCard key={`col3-${i}`} review={review} />
               ))}
@@ -122,11 +116,12 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Bottom Shadow */}
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/90 to-transparent z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-full h-16 4xl:h-50 bg-gradient-to-t from-black/90 to-transparent z-10 pointer-events-none" />
       </div>
     </div>
   );
 };
 
 export default Testimonials;
+
+//if aninmation got fucked restore previous code here

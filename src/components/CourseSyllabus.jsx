@@ -91,7 +91,7 @@ const CourseSyllabus = () => {
                   {course.descriptionLines.map((line, index) => (
                     <div
                       key={index}
-                      className=" 4xl:px-10  text-[10px] lg:py-4 px-2 lg:px-6 flex justify-between text-sm lg:text-[20px] 4xl:py-6 4xl:text-[22px]"
+                      className="  py-5 4xl:px-10  text-[15px] lg:py-4 px-2 lg:px-6 flex justify-between text-sm lg:text-[20px] 4xl:py-6 4xl:text-[22px]"
                     >
                       <p className="text-left">{line.text}</p>
                       <span className="text-right text-gray-700  ">{line.timeStamp}</span>
