@@ -29,7 +29,7 @@ import React from "react";
         </div>
 
         {/* IMAGE SECTION */}
-        <div className="bg-yellow-400 rounded-3xl p-8 shadow-lg w-full max-w-xl order-2 lg:order-1">
+        <div className="bg-yellow-400 rounded-3xl  mobile-s:p-4 p-8 shadow-lg w-full max-w-xl order-2 lg:order-1">
           <img
             src={certficate1}
             alt="Certificate"

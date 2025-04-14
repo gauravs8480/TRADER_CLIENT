@@ -3,7 +3,7 @@ import { AfterCourseCard, AfterCourseCard2 } from "../constants";
 
 
 const Card = ({ card }) => (
-  <div className="border-2 border-red-300 s:w-[344px] h-[330px] lg:w-[500px] lg:h-[500px] 3xl:w-[590px] 3xl:h-[600px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5">
+  <div className="border-2 border-red-300 mobile-s:h-[370px]  s:w-[344px] h-[330px] lg:w-[500px] lg:h-[500px] 3xl:w-[590px] 3xl:h-[600px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5">
     {/* Image */}
     <div className="h-[235px] lg:h-[350px] 3xl:h-[400px] overflow-hidden px-4 pt-4 lg:px-6 lg:pt-6 3xl:px-4 3xl:pt-4 4xl:pt-6 4xl:px-6">
       <img
@@ -15,10 +15,10 @@ const Card = ({ card }) => (
     </div>
     {/* Text */}
     <div className="w-full h-[200px] px-4 bg-opacity-90 text-black lg:px-6 3xl:px-5 flex flex-col">
-      <h2 className="pt-2.5 text-[21px] lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6 font-semibold">
+      <h2 className="pt-2.5  mobile-s:leading-[1] text-[21px] lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6 font-semibold">
         {card.title}
       </h2>
-      <p className="  text-[12px] lg:text-[16px] 3xl:text-[20px] lg:pt-2">
+      <p className="  text-[12px] lg:text-[16px] mobile-s:pt-4  3xl:text-[20px] lg:pt-2">
         {card.description}
       </p>
     </div>
