@@ -18,7 +18,7 @@ const Subscription = () => {
 
 
       {/* Grid layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12   4xl:gap-y-20  gap-x-4    mobile-s:px-6 px-4 4xl:max-w-[1800px] mx-auto  ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12   4xl:gap-y-20  gap-x-4    mobile-s:px-4 px-4 4xl:max-w-[1800px] mx-auto  ">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
