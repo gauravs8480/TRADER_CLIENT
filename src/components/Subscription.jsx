@@ -21,10 +21,10 @@ const Subscription = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
-            className={`w-full lg:w-[400px] 4xl:w-[550px] h-[400px] lg:h-[400px] 3xl:h-[550px] p-6 rounded-lg shadow-lg border-transparent border-2 hover:border-yellow-400 transition-all duration-300 ${
+            className={`w-full lg:w-[350px] 3xl:w-[450px] 4xl:w-[500px]  h-[400px] lg:h-[400px] 3xl:h-[550px] p-6 rounded-lg shadow-lg border-transparent border-2 hover:border-yellow-400 transition-all duration-300 ${
               index % 2 === 0
-                ? "lg:ml-[100px] 3xl:ml-[180px] 4xl:ml-[250px]"
-                : "lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[55px]"
+                ? "lg:ml-[150px] 3xl:ml-[200px] 4xl:ml-[300px]"
+                : "lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[40px]"
             }`}
           >
             {/* icon & Price */}
@@ -65,7 +65,7 @@ const Subscription = () => {
 
             {/* CTA Button */}
             <div className="flex justify-center">
-              <button className="bg-white w-[200px] lg:w-full text-black mt-5 3xl:mt-10 3xl:py-4 3xl:px-8 3xl:text-[20px] py-2 px-4 rounded-md font-semibold cursor-pointer transition-all">
+              <button className="bg-white w-[200px] lg:w-full text-black 4xl:mt-5 mt-5 3xl:mt-10 3xl:py-4 3xl:px-8 3xl:text-[20px] py-2 px-4 rounded-md font-semibold cursor-pointer transition-all">
                 {plan.buttonText}
               </button>
             </div>

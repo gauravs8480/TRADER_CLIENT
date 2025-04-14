@@ -5,7 +5,7 @@ import TestimonialsReview, { TestimonialsReview2, TestimonialsReview3 } from "..
 
 // Testimonial Card Component
 const TestimonialCard = ({ review }) => (
-  <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[400px]">
+  <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[350px] 3xl:w-[400px]">
     <div className="flex-1">
       <div className="flex mb-4">
         {[...Array(5)].map((_, i) => (
