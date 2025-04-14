@@ -36,11 +36,11 @@ const Mentor = () => {
       </div>
 
       {/* Right Image Section */}
-      <div className="w-full rounded-2xl  -mt-2 lg:w-[70%] 2xl:w-[50%] flex justify-center ">
+      <div className="   sm:w-full rounded-2xl  -mt-2 lg:w-[70%] 2xl:w-[50%] flex justify-center ">
       <img
   src={MentorPic2}
   alt="Mentor"
-  className="w-full max-w-xs  lg:max-w-sm object-cover"
+  className="w-full   mobile-s:max-h-[200px]  mobile-s:max-w-[200px] max-w-xs  lg:max-w-sm object-cover"
   style={{ height: "436px",width: "420px"
    }} // Explicitly increase the height
 />

@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div className="h-screen ">
 
       <NavBar />
-      <div className=" 4xl:top-[820px]  relative     top-[186px]  lg:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
+      <div className=" 4xl:top-[820px]  relative   mobile-s:top-[100px]  top-[186px]  lg:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
         {/* Content Container */}
         <div
           className=" 
@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div
             className=" 
                lg:w-[850px] lg:h-[355px] lg:pt-18  3xl:pt-0  3xl:w-[1000px]
-              text-white text-center lg:text-left
+              text-white text-center lg:text-left 
             "
           >
             <h1 className="text-[40px] leading-[1.1] lg:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
@@ -51,7 +51,7 @@ const HeroSection = () => {
 
           {/* Card Section */}
           <div
-            className=" items-center w-[300px] h-[145px] pt-4 lg:pt-0 mt-[100px] 
+            className=" items-center w-[300px] h-[145px] pt-4 lg:pt-0 mt-[100px] mobile-s:mt-[100px] 
               lg:w-[350px] lg:h-[130px]  
               bg-white/10 backdrop-blur-sm flex lg:pl-4 lg:items-start flex-col rounded-lg shadow-lg lg:mt-55 3xl:mt-65   3xl:w-[350px] 3xl:h-[155px] 3xl:pl-4 3xl:justify-start 3xl:items-start
             "
