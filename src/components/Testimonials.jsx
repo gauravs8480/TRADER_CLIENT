@@ -4,7 +4,7 @@ import gsap from "gsap";
 import TestimonialsReview, { TestimonialsReview2, TestimonialsReview3 } from "../constants";
 
 const TestimonialCard = ({ review }) => (
-  <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[350px] 3xl:w-[435px] 4xl:w-[550px]">
+  <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[350px] xl:w-[320px] 3xl:w-[435px] 4xl:w-[550px]">
     <div className="flex-1">
       <div className="flex mb-4">
         {[...Array(5)].map((_, i) => (

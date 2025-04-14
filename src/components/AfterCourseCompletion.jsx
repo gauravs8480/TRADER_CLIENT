@@ -29,7 +29,7 @@ const AfterCourseCompletion = () => {
   return (
     <div className="bg-black text-white pt-15">
       {/* Heading */}
-      <div className="text-center mb-10 px-3 md:px-20">
+      <div className="text-center mb-10 px-3 md:px-20 ">
         <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
           AFTER THE COURSE
         </p>
@@ -43,7 +43,7 @@ const AfterCourseCompletion = () => {
       </div>
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-15 3xl:px-25 4xl:px-50">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-15  xl:-ml-10  xl:gap-x-20 3xl:px-25 4xl:px-50">
         {/* Column 1: Think and Trade First */}
         <div className="flex flex-col lg:gap-4">
           {AfterCourseCard2.map((card, index) => (
@@ -54,7 +54,7 @@ const AfterCourseCompletion = () => {
         </div>
 
         {/* Column 2: Trade with Confidence First */}
-        <div className="flex flex-col lg:gap-4 lg:justify-end lg:mt-40 3xl:mt-65 mb-5 4xl:pr-2">
+        <div className="flex flex-col lg:gap-4 lg:justify-end  lg:mt-40 3xl:mt-65 mb-5 4xl:pr-2">
           {AfterCourseCard.map((card, index) => (
             <div key={card.id} className={index === 0 ? "order-2 lg:order-2" : "order-4 lg:order-4"}>
               <Card card={card} />

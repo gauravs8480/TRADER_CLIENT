@@ -27,10 +27,11 @@ const Subscription = () => {
               mobile-l:w-[350px] 
               lg:w-[450px] 
               h-[480px] 
-              lg:h-[500px] 
+              lg:h-[500px]
+           
               3xl:w-[580px] 3xl:h-[650px] 
               4xl:w-[680px] 4xl:h-[720px]
-              p-6 lg:px-5 lg:py-10 
+              p-6 lg:px-5 lg:py-10 xl:py-12
               3xl:px-10 3xl:py-10 
               4xl:px-15 4xl:py-15 
               rounded-lg shadow-lg 
@@ -42,8 +43,8 @@ const Subscription = () => {
               mobile-m:mx-auto
               ${
                 index % 2 === 0
-                  ? "mobile-s:ml-0 lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px]"
-                  : "mobile-s:ml-0 lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px]"
+                  ? "mobile-s:ml-0 lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px] xl:ml-[50px]"
+                  : "mobile-s:ml-0 lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px] xl:ml-[10px]"
               }`}
           >
             {/* Icon & Price */}
