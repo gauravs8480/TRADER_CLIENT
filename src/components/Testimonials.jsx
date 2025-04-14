@@ -18,7 +18,7 @@ const TestimonialCard = ({ review }) => (
       </div>
       <p className="lg:text-[15px] leading-relaxed text-left mb-4">{review.testimonial}</p>
     </div>
-    <div className="mt-auto flex items-center justify-between border-t pt-2 border-amber-400">
+    <div className="mt-auto flex items-center justify-between  pt-2 ">
       <div className="flex items-center">
         <div className="w-10 h-10 overflow-hidden bg-gray-300 rounded-full mr-2">
           <img src={review.image} alt="Profile" className="w-full h-full object-cover" />
