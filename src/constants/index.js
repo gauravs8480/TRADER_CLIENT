@@ -76,7 +76,7 @@ const brandLogos = [
     {
       id: 1,
       title: "Introduction",
-      teaser: "overview of fundamentals marketing concepts to kickstart your journey.",
+      teaser: "Overview of fundamentals marketing concepts to kickstart your journey.",
       descriptionLines: [
         { text: "Learn foundational marketing concepts.", timeStamp: "8:12" },
         { text: "Kickstart your marketing journey with ease.", timeStamp: "13:20" },
@@ -121,43 +121,39 @@ const brandLogos = [
 
 
 
+
+
   const AfterCourseCard = [
     {
       id: 1,
       image: certficate1,
       title: "Trade with confidence",
-      description: "Master risk managment and execution to take high probablity trades",
+      description: "Master risk management and execution to take high probability trades",
     },
     {
       id: 2,
       image: certficate1,
-      title: "Card1 Title 2",
-      description: "This is a brief description for Card 2.",
+      title: "Manage your profit and taxes",
+      description: "Learn how to handle payouts efficiently and legally as a prop trader.",
     },
-
-
-
-  ]; export { AfterCourseCard };
-
-
+  ];
   
   const AfterCourseCard2 = [
     {
       id: 1,
       image: certficate1,
       title: "Think and trade like professional",
-      description: "develop the mindset and discipline needed for long term success.",
+      description: "Develop the mindset and discipline needed for long term success.",
     },
     {
       id: 2,
       image: certficate1,
-      title: "Car2d 2 Title 2",
-      description: "This is a brief description for Card 2.",
+      title: "Stay Consistently profitable",
+      description: "Avoid common mistakes and build a sustainable trading career.",
     },
-
-
-
-  ]; export { AfterCourseCard2 };
+  ];
+  
+  export { AfterCourseCard, AfterCourseCard2 };
 
 
 

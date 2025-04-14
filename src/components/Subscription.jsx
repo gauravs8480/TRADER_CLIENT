@@ -18,13 +18,13 @@ const Subscription = () => {
 
 
       {/* Grid layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 4xl:gap-y-20  gap-x-4 px-4 4xl:max-w-[1800px] mx-auto border-2 border-e-amber-400 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12   4xl:gap-y-20  gap-x-4 px-4 4xl:max-w-[1800px] mx-auto border-2 border-e-amber-400 ">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
-            className={`w-full lg:w-[350px] 3xl:w-[450px] h-[400px] lg:h-[400px] 3xl:h-[550px] p-6 4xl:px-15  4xl:py-15  4xl:h-[720px]  4xl:w-[680px]  rounded-lg shadow-lg border-transparent border-2 border-yellow-400 transition-all duration-300 ${
+            className={`w-full lg:px-5 lg:py-10   h-[480px]    lg:w-[450px] lg:h-[500px]  p-6 4xl:px-15  4xl:py-15  4xl:h-[720px]  4xl:w-[680px]  3xl:w-[580px] 3xl:h-[650px]  3xl:px-10  3xl:py-10  rounded-lg shadow-lg border-transparent border-2 hover:border-yellow-400 transition-all duration-300 ${
               index % 2 === 0
-                ? "lg:ml-[150px] 3xl:ml-[200px] 4xl:ml-[140px]"
+                ? "lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px]"
                 : "lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px]"
             }`}
           >
@@ -66,7 +66,7 @@ const Subscription = () => {
 
             {/* CTA Button */}
             <div className="flex justify-center ">
-              <button className="bg-white w-[200px] lg:w-full text-black 4xl:mt-10 mt-5 3xl:mt-10 3xl:py-4 3xl:px-8 3xl:text-[20px] py-2 px-4 rounded-md font-semibold cursor-pointer transition-all">
+              <button className="bg-white w-[200px] lg:w-full text-black 4xl:mt-10 mt-5 3xl:mt-5 3xl:py-4 3xl:px-8 3xl:text-[20px] py-2 px-4 rounded-md font-semibold cursor-pointer transition-all">
                 {plan.buttonText}
               </button>
             </div>
