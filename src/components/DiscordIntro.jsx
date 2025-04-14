@@ -43,7 +43,7 @@ const DiscordIntro = () => {
           <p className="text-xs lg:text-[15px] 2xl:text-[15px] font-medium uppercase tracking-widest">
             TRADE . NETWORK . ELEVATE
           </p>
-          <h1 className="text-[26px] lg:text-[45px] font-semibold pt-6">
+          <h1 className="text-[26px] lg:text-[45px] font-semibold pt-6 pb-6 lg:pb-14">
             More than just a <br className="lg:hidden" />
             <span className="text-yellow-400">discord server.</span>
           </h1>
@@ -93,8 +93,8 @@ const DiscordIntro = () => {
         </div>
 
         <LayoutWrapper>
-          <div className="w-full pt-6 justify-center flex lg:pt-8 3xl:pt-12">
-            <button className="bg-yellow-400 text-black lg:text-15px 3xl:-ml-60 lg:-ml-45 3xl:text-[20px] font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-300 transition duration-300">
+          <div className="w-full pt-8 justify-center flex lg:pt-10 3xl:pt-12">
+            <button className="bg-yellow-400 text-black lg:text-15px 3xl:-ml-60   4xl:-ml-100 lg:-ml-45 3xl:text-[20px] font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-yellow-300 transition duration-300">
               Enroll now
             </button>
           </div>

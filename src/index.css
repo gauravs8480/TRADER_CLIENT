@@ -1,3 +1,6 @@
+
+/* Step 1: Import the Google Font directly */
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
 @import "tailwindcss";
 
 
@@ -5,8 +8,13 @@
   
   --breakpoint-3xl: 120rem;
   --breakpoint-4xl:160rem;
+  --font-saint: 'Mrs Saint Delafield', cursive;
 }
 
+/* Optional utility class */
+.font-saint {
+  font-family: var(--font-saint);
+}
 
 
 .no-scrollbar::-webkit-scrollbar {
@@ -17,3 +25,14 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+
+
+
+
+
+
+
+
+
+
+

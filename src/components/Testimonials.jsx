@@ -34,7 +34,7 @@ const Testimonials = () => {
   const col2Ref = useRef(null);
   const col3Ref = useRef(null);
 
-  const duplicate = (arr) => [...arr, ...arr];
+  const duplicate = (arr) => [...arr, ...arr,...arr];
 
   useEffect(() => {
     const animateCol = (ref, dir = "up") => {
@@ -57,7 +57,7 @@ const Testimonials = () => {
       );
 
       const slowDown = () => timeline.timeScale(0.3);
-      const speedUp = () => timeline.timeScale(1);
+      const speedUp = () => timeline.timeScale(1.2);
 
       container.addEventListener("mouseenter", slowDown);
       container.addEventListener("mouseleave", speedUp);

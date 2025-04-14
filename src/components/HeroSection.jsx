@@ -31,7 +31,7 @@ const HeroSection = () => {
             </h1>
             <h1 className=" text-[40px] leading-[1.1]  lg:text-[70px] lg:leading-[1.1] font-semibold 3xl:text-[95px] 3xl:leading-[1.2]">
               by{" "}
-              <span className="text-yellow-400 font-normal">RAKESH VERMA</span>
+              <span className="text-yellow-400 font-normal font-saint">Rakesh Verma</span>
             </h1>
             <p
               className=" mt-6 text-[15px]

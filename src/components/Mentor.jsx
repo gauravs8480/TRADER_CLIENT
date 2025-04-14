@@ -32,7 +32,7 @@ const Mentor = () => {
           <FaDribbble />
         </div>
 
-        <p className=" lg:text-[35px] italic text-[26px] text-white font-medium -mt-4 ">Rakesh Verma</p>
+        <p className=" lg:text-[35px]  text-[26px] text-white font-medium -mt-2 font-saint  ">Rakesh Verma</p>
       </div>
 
       {/* Right Image Section */}
