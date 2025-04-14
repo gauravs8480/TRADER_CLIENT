@@ -3,7 +3,7 @@ import { AfterCourseCard, AfterCourseCard2 } from "../constants";
 
 
 const Card = ({ card }) => (
-  <div className="mx-2 border-2 border-red-300 w-[360px] h-[330px] lg:w-[500px] lg:h-[500px] 3xl:w-[590px] 3xl:h-[600px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5">
+  <div className="border-2 border-red-300 w-[344px] h-[330px] lg:w-[500px] lg:h-[500px] 3xl:w-[590px] 3xl:h-[600px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5">
     {/* Image */}
     <div className="h-[235px] lg:h-[350px] 3xl:h-[400px] overflow-hidden px-4 pt-4 lg:px-6 lg:pt-6 3xl:px-4 3xl:pt-4 4xl:pt-6 4xl:px-6">
       <img

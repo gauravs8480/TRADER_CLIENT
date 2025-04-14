@@ -7,7 +7,7 @@ const TestimonialCard = ({ review }) => (
   <div className="flex flex-col bg-white text-black rounded-2xl shadow-lg py-5 px-4 min-h-[250px] lg:h-[250px] lg:w-[350px] 3xl:w-[435px] 4xl:w-[550px]">
     <div className="flex-1">
       <div className="flex mb-4">
-        {[...Array(7)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <FaStar
             key={i}
             className={i < review.stars ? "text-black" : "text-gray-300"}
@@ -87,10 +87,10 @@ const Testimonials = () => {
         </h1>
       </div>
 
-      <div className="max-w-7xl 3xl:max-w-[1400px] mx-auto relative 4xl:max-w-[1800px]">
+      <div className="max-w-7xl 3xl:max-w-[1400px] mx-auto lg:ml-3.5 relative 4xl:max-w-[1800px]">
         <div className="absolute top-0 left-0 w-full h-16 4xl:h-24 bg-gradient-to-b from-black/90 to-transparent z-10 pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 overflow-hidden">
           <div ref={col1Ref} className="h-[600px] 4xl:h-[900px] overflow-hidden">
             <div className="inner flex flex-col gap-6 will-change-transform">
               {duplicate(TestimonialsReview).map((review, i) => (

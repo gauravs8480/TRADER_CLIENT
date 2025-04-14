@@ -16,14 +16,14 @@ const Mentor = () => {
 
         <div className=" text-[14.8px] text-gray-300  leading-relaxed lg:text-[15px] ">
           <p className="mb-4  ">
-            Rakesh Verma is a trader with over 5 years of experience <br className="block lg:hidden" ></br> in the financial markets and <br className="hidden lg:block" ></br> 
-            currently a 7-figure funded <br className="block lg:hidden" ></br> prop firm trader. His journey reflects real results, having<br className="block lg:hidden" ></br> <br className="hidden lg:block" ></br>
-            secured multiple payouts from some of the biggest<br className="block lg:hidden" ></br> prop firms in the industry.<br className="hidden lg:block" ></br>
+            Rakesh Verma is a trader with over 5 years of experience  in the financial markets and <br className="hidden lg:block" ></br> 
+            currently a 7-figure funded prop firm trader. His journey reflects real results, having <br className="hidden lg:block" ></br>
+            secured multiple payouts from some of the biggest prop firms in the industry.<br className="hidden lg:block" ></br>
           </p>
           <p className=" text-[14.8px]" >
-            Through this course, he shares exactly what helped him <br className="block lg:hidden" ></br> get funded and stay consistent –<br className="hidden lg:block" ></br>
-            no fluff, no empty <br className="block lg:hidden" ></br> promises. His goal is simple: help aspiring traders <br className="block lg:hidden" ></br> achieve funding,<br className="hidden lg:block" ></br>
-            trade confidently, and become part <br className="block lg:hidden" ></br> of a community built for serious traders.<br className="hidden lg:block" ></br>
+            Through this course, he shares exactly what helped him  get funded and stay consistent –<br className="hidden lg:block" ></br>
+            no fluff, no empty  promises. His goal is simple: help aspiring traders achieve funding,<br className="hidden lg:block" ></br>
+            trade confidently, and become part  of a community built for serious traders.<br className="hidden lg:block" ></br>
           </p>
         </div>
 
@@ -36,11 +36,11 @@ const Mentor = () => {
       </div>
 
       {/* Right Image Section */}
-      <div className="w-full  -mt-2 lg:w-[70%] 2xl:w-[50%] flex justify-center">
+      <div className="w-full rounded-2xl  -mt-2 lg:w-[70%] 2xl:w-[50%] flex justify-center ">
       <img
   src={MentorPic2}
   alt="Mentor"
-  className="w-full max-w-sm object-cover"
+  className="w-full max-w-xs  lg:max-w-sm object-cover"
   style={{ height: "436px",width: "420px"
    }} // Explicitly increase the height
 />

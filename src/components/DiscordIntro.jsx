@@ -50,7 +50,7 @@ const DiscordIntro = () => {
         </div>
       </LayoutWrapper>
 
-      <div className="bg-black w-full pl-1 lg:pl-45 3xl:pl-62 4xl:pl-100">
+      <div className="bg-black w-full pl-5 lg:pl-45 3xl:pl-62 4xl:pl-100">
         {/* Cards */}
         <div
           ref={scrollRef}
