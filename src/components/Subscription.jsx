@@ -22,7 +22,7 @@ const Subscription = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
-            className={`w-full lg:px-5 lg:py-10   h-[480px] mobile-s:w-[270px]   lg:w-[450px] lg:h-[500px]  p-6 4xl:px-15  4xl:py-15  4xl:h-[720px]  4xl:w-[680px]  3xl:w-[580px] 3xl:h-[650px]  mobile-s:h-[500px]  3xl:px-10  3xl:py-10  rounded-lg shadow-lg border-transparent border-2 border-yellow-400 transition-all duration-300 ${
+            className={`w-full lg:px-5 lg:py-10   h-[480px] mobile-s:w-[300px]   lg:w-[450px] lg:h-[500px]  p-6 4xl:px-15  4xl:py-15  4xl:h-[720px]  4xl:w-[680px]  3xl:w-[580px] 3xl:h-[650px]  mobile-s:h-[480px]  3xl:px-10  3xl:py-10  rounded-lg shadow-lg border-transparent border-2 border-yellow-400 transition-all duration-300 ${
               index % 2 === 0
                 ? " mobile-s:ml-0 lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px]"
                 : " mobile-s:ml-0  lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px]"
