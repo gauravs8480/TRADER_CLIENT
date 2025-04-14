@@ -40,7 +40,7 @@ const CourseIntro = () => {
           className="
             rounded-2xl md:rounded-[15px] shadow-lg object-cover
             mobile-s:w-[320px] mobile-s:h-[220px]
-            mobile-m:w-[300px]
+            mobile-m:w-[340px]
             mobile-l:w-[350px] mobile-l:h-[250px]
             w-[360px] h-[250px]
             sm:w-[450px]
@@ -60,7 +60,7 @@ const CourseIntro = () => {
           Your browser does not support the video tag.
         </video>
 
-        {/* Custom Play Button */}
+        {/* Play Button Overlay */}
         {!isPlaying && (
           <div
             className="absolute flex items-center justify-center md:w-14 md:h-14 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-500 transition duration-300"
