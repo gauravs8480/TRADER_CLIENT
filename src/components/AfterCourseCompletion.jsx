@@ -15,7 +15,7 @@ const Card = ({ card }) => (
     </div>
     {/* Text */}
     <div className="w-full h-[200px] px-4 bg-opacity-90 text-black lg:px-6 3xl:px-5 flex flex-col">
-      <h2 className="pt-2.5  mobile-s:leading-[1] text-[21px] lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6 font-semibold">
+      <h2 className="pt-2.5  mobile-s:pt-4 mobile-s:leading-[1] text-[21px] lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6 font-semibold">
         {card.title}
       </h2>
       <p className="  text-[12px] lg:text-[16px] mobile-s:pt-4  3xl:text-[20px] lg:pt-2">

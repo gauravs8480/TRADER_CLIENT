@@ -6,11 +6,11 @@ const Subscription = () => {
   return (
     <div className="bg-black text-white py-15 px-1">
       {/* Header */}
-      <div className="text-center px-3 lg:-ml-2 text-white py-6">
+      <div className="text-center px-3 lg:-ml-2 text-white py-6 mobile-s:py-8 ">
         <p className="text-xs lg:text-[15px] font-medium uppercase tracking-widest">
           SUBSCRIPTION
         </p>
-        <h1 className="text-[26px] lg:text-[45px] font-semibold pt-6">
+        <h1 className="text-[26px] lg:text-[45px] font-semibold pt-6  ">
           Which one is right <br className="lg:hidden" />{" "}
           <span className="text-yellow-400">for you</span>
         </h1>
@@ -18,14 +18,14 @@ const Subscription = () => {
 
 
       {/* Grid layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12   4xl:gap-y-20  gap-x-4 px-4 4xl:max-w-[1800px] mx-auto  ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8 lg:gap-y-12   4xl:gap-y-20  gap-x-4    mobile-s:px-0 px-4 4xl:max-w-[1800px] mx-auto  ">
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
-            className={`w-full lg:px-5 lg:py-10   h-[480px]    lg:w-[450px] lg:h-[500px]  p-6 4xl:px-15  4xl:py-15  4xl:h-[720px]  4xl:w-[680px]  3xl:w-[580px] 3xl:h-[650px]  mobile-s:h-[500px]  3xl:px-10  3xl:py-10  rounded-lg shadow-lg border-transparent border-2 border-yellow-400 transition-all duration-300 ${
+            className={`w-full lg:px-5 lg:py-10   h-[480px] mobile-s:w-[270px]   lg:w-[450px] lg:h-[500px]  p-6 4xl:px-15  4xl:py-15  4xl:h-[720px]  4xl:w-[680px]  3xl:w-[580px] 3xl:h-[650px]  mobile-s:h-[500px]  3xl:px-10  3xl:py-10  rounded-lg shadow-lg border-transparent border-2 border-yellow-400 transition-all duration-300 ${
               index % 2 === 0
-                ? "lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px]"
-                : "lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px]"
+                ? " mobile-s:ml-0 lg:ml-[100px] 3xl:ml-[50px] 4xl:ml-[140px]"
+                : " mobile-s:ml-0  lg:ml-[30px] 3xl:ml-[30px] 4xl:ml-[30px]"
             }`}
           >
             {/* icon & Price */}
