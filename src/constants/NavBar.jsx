@@ -3,7 +3,7 @@ import { logo } from '../assets';
 
 const NavBar = () => {
   return (
-    <nav className=" 4xl:h-[90px]  fixed  3xl:h-[100px]    top-0 left-0 right-0 w-full lg:h-[70px]   flex items-center justify-between lg:px-8  bg-transparent z-10">
+    <nav className="  4xl:h-[90px]  absolute 3xl:h-[100px]    top-0 left-0 right-0 w-full lg:h-[70px]   flex items-center justify-between lg:px-8  bg-transparent z-10">
       {/* Logo */}
       <img
         src={logo}
