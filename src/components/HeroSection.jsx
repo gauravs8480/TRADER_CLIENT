@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div className="h-screen ">
 
       <NavBar />
-      <div className=" 4xl:top-[820px]  relative  mobile-s:top-[100px]  mobile-m:top-[90px] mobile-l:top-[120px]  md:top-[90px] lg:top-[100px]  top-[186px] xl:top-[150px]  2xl:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
+      <div className=" 4xl:top-[820px]  relative  mobile-s:top-[100px]  mobile-m:top-[150px] mobile-l:top-[120px]  md:top-[90px] lg:top-[100px]  top-[186px] xl:top-[150px]  2xl:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
         {/* Content Container */}
         <div
           className=" border-2 border-blue-600
