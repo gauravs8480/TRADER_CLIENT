@@ -36,7 +36,7 @@ const Subscription = () => {
            rounded-lg shadow-lg 
            transition-all duration-300 
            border-2 border-transparent
-           hover:border-yellow-400 focus:border-yellow-400 active:border-yellow-400 focus-within:border-yellow-400
+           hover:border-yellow-400 focus:border-yellow-400  focus-within:border-yellow-400
            mobile-m:mx-auto
            ${
              index % 2 === 0
