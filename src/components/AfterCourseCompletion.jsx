@@ -41,7 +41,7 @@ const Card = ({ card, activeCardId, setActiveCardId }) => {
         e.stopPropagation();
         setActiveCardId(card.id);
       }}
-      className={`mobile-s:h-[370px] s:w-[344px] h-[330px] md:w-[400px] md:h-[340px] lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] 3xl:w-[590px] 3xl:h-[550px]
+      className={`mobile-s:h-[370px] s:w-[344px] h-[330px] md:w-[400px] md:h-[340px] lg:w-[400px] lg:h-[400px] xl:w-[460px] xl:h-[500px] 2xl:w-[550px]    3xl:w-[590px] 3xl:h-[550px]
         rounded-[20px] shadow-lg overflow-hidden relative 
         ${isActive ? "bg-yellow-400" : "bg-white hover:bg-yellow-400"} 
         transition-colors duration-300 flex-shrink-0 mb-5 4xl:mb-10`}
@@ -95,7 +95,7 @@ const AfterCourseCompletion = () => {
       </div>
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 md:px-30 lg:px-50 xl:px-15 xl:gap-x-20 2xl:gap-x-5 3xl:px-25 4xl:px-65">
+      <div className="grid grid-cols-1 xl:grid-cols-2 md:px-30 lg:px-50 xl:px-4 xl:gap-x-2 2xl:gap-x-5 2xl:px-5 3xl:px-25 4xl:px-65">
         {/* Column 1 */}
         <div className="flex flex-col lg:gap-4">
           {AfterCourseCard2.map((card, index) => (

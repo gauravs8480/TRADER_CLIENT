@@ -16,14 +16,14 @@ const Mentor = () => {
 
         <div className=" text-[14.8px] text-gray-300  leading-relaxed lg:text-[15px] ">
           <p className="mb-4  ">
-            Rakesh Verma is a trader with over 5 years of experience  in the financial markets and <br className="hidden lg:block" ></br> 
-            currently a 7-figure funded prop firm trader. His journey reflects real results, having <br className="hidden lg:block" ></br>
-            secured multiple payouts from some of the biggest prop firms in the industry.<br className="hidden lg:block" ></br>
+            Rakesh Verma is a trader with over 5 years of experience  in the financial markets and <br className="hidden 2xl:block" ></br> 
+            currently a 7-figure funded prop firm trader. His journey reflects real results, having <br className="hidden 2xl:block" ></br>
+            secured multiple payouts from some of the biggest prop firms in the industry.<br className="hidden 2xl:block" ></br>
           </p>
           <p className=" text-[14.8px]" >
-            Through this course, he shares exactly what helped him  get funded and stay consistent –<br className="hidden lg:block" ></br>
-            no fluff, no empty  promises. His goal is simple: help aspiring traders achieve funding,<br className="hidden lg:block" ></br>
-            trade confidently, and become part  of a community built for serious traders.<br className="hidden lg:block" ></br>
+            Through this course, he shares exactly what helped him  get funded and stay consistent –<br className="hidden 2xl:block" ></br>
+            no fluff, no empty  promises. His goal is simple: help aspiring traders achieve funding,<br className="hidden 2xl:block" ></br>
+            trade confidently, and become part  of a community built for serious traders.<br className="hidden 2xl:block" ></br>
           </p>
         </div>
 

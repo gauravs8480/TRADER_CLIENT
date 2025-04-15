@@ -44,7 +44,7 @@ const CourseIntro = () => {
             mobile-l:w-[350px] mobile-l:h-[250px]
             w-[360px] h-[250px]
             sm:w-[450px]
-            md:w-[600px]
+            md:w-[600px] md:h-[400px]
             lg:w-[900px] lg:h-[500px]
             2xl:w-[1200px] 2xl:h-[640px]
             4xl:w-[1600px] 4xl:h-[900px]
