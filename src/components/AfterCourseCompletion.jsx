@@ -43,7 +43,7 @@ const AfterCourseCompletion = () => {
       </div>
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-15     xl:gap-x-10       3xl:px-25 4xl:px-65">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-15     xl:gap-x-20   2xl:gap-x-5    3xl:px-25 4xl:px-65">
         {/* Column 1: Think and Trade First */}
         <div className="flex flex-col lg:gap-4">
           {AfterCourseCard2.map((card, index) => (
