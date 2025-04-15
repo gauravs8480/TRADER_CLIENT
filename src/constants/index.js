@@ -122,16 +122,15 @@ const brandLogos = [
 
 
 
-
   const AfterCourseCard = [
     {
-      id: 1,
+      id: "right-1",
       image: certficate1,
       title: "Trade with confidence",
       description: "Master risk management and execution to take high probability trades",
     },
     {
-      id: 2,
+      id: "right-2",
       image: certficate1,
       title: "Manage your profit and taxes",
       description: "Learn how to handle payouts efficiently and legally as a prop trader.",
@@ -140,13 +139,13 @@ const brandLogos = [
   
   const AfterCourseCard2 = [
     {
-      id: 1,
+      id: "left-1",
       image: certficate1,
       title: "Think and trade like professional",
       description: "Develop the mindset and discipline needed for long term success.",
     },
     {
-      id: 2,
+      id: "left-2",
       image: certficate1,
       title: "Stay Consistently profitable",
       description: "Avoid common mistakes and build a sustainable trading career.",

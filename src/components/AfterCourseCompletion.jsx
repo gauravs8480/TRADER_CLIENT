@@ -1,5 +1,36 @@
 import React, { useEffect, useState } from "react";
-import { AfterCourseCard, AfterCourseCard2 } from "../constants";
+import { certficate1 } from "../assets";
+
+// Updated data with unique IDs
+const AfterCourseCard = [
+  {
+    id: "right-1",
+    image: certficate1,
+    title: "Trade with confidence",
+    description: "Master risk management and execution to take high probability trades",
+  },
+  {
+    id: "right-2",
+    image: certficate1,
+    title: "Manage your profit and taxes",
+    description: "Learn how to handle payouts efficiently and legally as a prop trader.",
+  },
+];
+
+const AfterCourseCard2 = [
+  {
+    id: "left-1",
+    image: certficate1,
+    title: "Think and trade like professional",
+    description: "Develop the mindset and discipline needed for long term success.",
+  },
+  {
+    id: "left-2",
+    image: certficate1,
+    title: "Stay Consistently profitable",
+    description: "Avoid common mistakes and build a sustainable trading career.",
+  },
+];
 
 const Card = ({ card, activeCardId, setActiveCardId }) => {
   const isActive = activeCardId === card.id;
@@ -10,7 +41,7 @@ const Card = ({ card, activeCardId, setActiveCardId }) => {
         e.stopPropagation();
         setActiveCardId(card.id);
       }}
-      className={`mobile-s:h-[370px] s:w-[344px] h-[330px] md:w-[400px] md:h-[340px] lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] 3xl:w-[590px] 3xl:h-[550px] 
+      className={`mobile-s:h-[370px] s:w-[344px] h-[330px] md:w-[400px] md:h-[340px] lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[500px] 3xl:w-[590px] 3xl:h-[550px]
         rounded-[20px] shadow-lg overflow-hidden relative 
         ${isActive ? "bg-yellow-400" : "bg-white hover:bg-yellow-400"} 
         transition-colors duration-300 flex-shrink-0 mb-5 4xl:mb-10`}
@@ -24,6 +55,7 @@ const Card = ({ card, activeCardId, setActiveCardId }) => {
           draggable={false}
         />
       </div>
+
       {/* Text */}
       <div className="w-full h-[200px] px-4 bg-opacity-90 text-black xl:px-6 3xl:px-5 flex flex-col">
         <h2 className="pt-2.5 mobile-s:pt-4 mobile-s:leading-[1] text-[21px] lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6 font-semibold">
