@@ -3,9 +3,9 @@ import { AfterCourseCard, AfterCourseCard2 } from "../constants";
 
 
 const Card = ({ card }) => (
-  <div className="border-2 border-red-300 mobile-s:h-[370px]  s:w-[344px] h-[330px] lg:w-[500px] lg:h-[500px]  3xl:w-[590px] 3xl:h-[550px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5 4xl:mb-10">
+  <div className="border-2 border-red-300 mobile-s:h-[370px]  s:w-[344px] h-[330px] md:w-[400px] md:h-[340px]  lg:w-[400px] lg:h-[400px]  xl:w-[500px] xl:h-[500px]   3xl:w-[590px] 3xl:h-[550px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5 4xl:mb-10">
     {/* Image */}
-    <div className="h-[235px] lg:h-[350px]  3xl:h-[400px] overflow-hidden px-4 pt-4 lg:px-6 lg:pt-6 3xl:px-4 3xl:pt-4 4xl:pt-6 4xl:px-6">
+    <div className="h-[235px] lg:h-[250px] xl:h-[350px]  3xl:h-[400px] overflow-hidden px-4 pt-4 xlpx-6 xl:pt-6 3xl:px-4 3xl:pt-4 4xl:pt-6 4xl:px-6">
       <img
         src={card.image}
         alt={`Card image ${card.id}`}
@@ -14,7 +14,7 @@ const Card = ({ card }) => (
       />
     </div>
     {/* Text */}
-    <div className="w-full h-[200px] px-4 bg-opacity-90 text-black lg:px-6 3xl:px-5 flex flex-col">
+    <div className="w-full h-[200px] px-4 bg-opacity-90 text-black xl:px-6 3xl:px-5 flex flex-col">
       <h2 className="pt-2.5  mobile-s:pt-4 mobile-s:leading-[1] text-[21px] lg:text-[26px] 3xl:text-[30px] lg:pt-5 3xl:pt-6 font-semibold">
         {card.title}
       </h2>
@@ -43,7 +43,7 @@ const AfterCourseCompletion = () => {
       </div>
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-15     xl:gap-x-20   2xl:gap-x-5    3xl:px-25 4xl:px-65">
+      <div className="grid grid-cols-1 xl:grid-cols-2 md:px-30  lg:px-50  xl:px-15   xl:gap-x-20   2xl:gap-x-5    3xl:px-25 4xl:px-65">
         {/* Column 1: Think and Trade First */}
         <div className="flex flex-col lg:gap-4">
           {AfterCourseCard2.map((card, index) => (
@@ -54,7 +54,7 @@ const AfterCourseCompletion = () => {
         </div>
 
         {/* Column 2: Trade with Confidence First */}
-        <div className="flex flex-col lg:gap-4 lg:justify-end  lg:mt-40 3xl:mt-65 mb-5 4xl:pr-2">
+        <div className="flex flex-col lg:gap-4 lg:justify-end  xl:mt-40 3xl:mt-65 mb-5 4xl:pr-2">
           {AfterCourseCard.map((card, index) => (
             <div key={card.id} className={index === 0 ? "order-2 lg:order-2" : "order-4 lg:order-4"}>
               <Card card={card} />

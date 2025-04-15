@@ -8,34 +8,34 @@ const HeroSection = () => {
     <div className="h-screen ">
 
       <NavBar />
-      <div className=" 4xl:top-[820px]  relative   mobile-m:top-[200px]   mobile-s:top-[100px]  top-[186px]  lg:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
+      <div className=" 4xl:top-[820px]  relative  mobile-s:top-[100px]  mobile-m:top-[90px] mobile-l:top-[120px]  md:top-[90px] lg:top-[100px]  top-[186px] xl:top-[150px]  2xl:top-[290px] 3xl:top-[400px] w-full h-screen/2 lg:pt-0 flex flex-col  ">
         {/* Content Container */}
         <div
-          className=" 
-            lg:flex-row relative z-20 
-            flex flex-col justify-center  items-center lg:justify-between 
+          className=" border-2 border-blue-600
+            xl:flex-row relative z-20 
+            flex flex-col justify-center  items-center xl:justify-between 
           "
         >
           {/* Hero Content */}
           <div
-            className=" 
-               lg:w-[850px] lg:h-[355px] lg:pt-18  3xl:pt-0  3xl:w-[1000px]
-              text-white text-center lg:text-left 
+            className=" broder-2 border-red-400
+           lg:border-2    xl:w-[850px] xl:h-[355px] xl:pt-15 2xl:pt-18  3xl:pt-0  3xl:w-[1000px]
+              text-white text-center xl:text-left 
             "
           >
-            <h1 className="text-[40px] leading-[1.1] lg:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
+            <h1 className="text-[40px] leading-[1.1] xl:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
               Master Trading <br />
             </h1>
-            <h1 className="text-[40px] leading-[1.1] lg:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
+            <h1 className="text-[40px] leading-[1.1] xl:text-[70px] font-semibold 3xl:text-[95px] lg:leading-[1.1] 3xl:leading-[1.2]">
               & Get Funded <br />
             </h1>
-            <h1 className=" text-[40px] leading-[1.1]  lg:text-[70px] lg:leading-[1.1] font-semibold 3xl:text-[95px] 3xl:leading-[1.2]">
+            <h1 className=" text-[40px] leading-[1.1]  xl:text-[70px] lg:leading-[1.1] font-semibold 3xl:text-[95px] 3xl:leading-[1.2]">
               by{" "}
               <span className="text-yellow-400 font-normal font-saint">Rakesh Verma</span>
             </h1>
             <p
               className=" mt-6 text-[15px]
-            lg:text-[15px] lg:mt-5 font-semibold
+            xl:text-[15px] lg:mt-5 font-semibold
            3xl:text-[20px] 3xl:mt-6
               "
             >
@@ -51,15 +51,15 @@ const HeroSection = () => {
 
           {/* Card Section */}
           <div
-            className=" items-center w-[300px] h-[145px] pt-4 lg:pt-0 mt-[100px] mobile-s:mt-[50px] mobile-m:mt-[100px]
-              lg:w-[350px] lg:h-[130px]  
-              bg-white/10 backdrop-blur-sm flex lg:pl-4 lg:items-start flex-col rounded-lg shadow-lg lg:mt-55 3xl:mt-65   3xl:w-[350px] 3xl:h-[155px] 3xl:pl-4 3xl:justify-start 3xl:items-start
+            className=" items-center w-[300px] h-[145px] md:h-[130px] md:pt-2 mobile-s:pt-2 mobile-s:h-[130px]   pt-4 lg:pt-0 mt-[100px] md:mt-[80px] lg:mt-[90px] xl:mt-[220px]  mobile-s:mt-[50px] mobile-m:mt-[80px] mobile-l:mt-[50px]  border-2 
+              xl:w-[350px] xl:h-[130px]  
+              bg-white/10 backdrop-blur-sm flex lg:pl-4 bprder-2 xl:items-start flex-col rounded-lg shadow-lg   3xl:mt-65   3xl:w-[350px] 3xl:h-[155px] 3xl:pl-4 3xl:justify-start 3xl:items-start
             "
           >
             <p
               className="pb-4
                   font-semibold
-                 text-white lg:mt-3 lg:text-[15px] lg:pb-4 3xl:text-[20px]
+                 text-whitev lg:mt-4 xl:mt-3 xl:text-[15px] xl:pb-4 3xl:text-[20px]
               "
             >
               Get daily setups, live membership
