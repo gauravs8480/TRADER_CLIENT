@@ -35,7 +35,14 @@
 
 
 
-
+@media (hover: none) {
+  .hover\\:border-yellow-400:hover {
+    border-color: transparent; /* Avoid hover color issues on touch devices */
+  }
+  .focus\\:border-yellow-400:focus {
+    border-color: yellow; /* Ensure focus works on tap */
+  }
+}
 
 
 

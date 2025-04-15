@@ -19,33 +19,31 @@ const Subscription = () => {
       {/* Grid layout */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-8 lg:gap-y-12 3xl:gap-y-15  4xl:gap-y-20 gap-x-4 mobile-s:px-2 mobile-m:px-3 px-4 4xl:max-w-[1800px] mx-auto">
         {subscriptionPlans.map((plan, index) => (
-          <div
-            key={plan.id}
-            className={`w-full 
-              mobile-s:w-[300px] 
-              mobile-m:w-[310px] 
-              mobile-l:w-[350px] 
-              lg:w-[450px] 
-              h-[480px] 
-              lg:h-[500px]
-           
-              3xl:w-[580px] 3xl:h-[650px] 
-              4xl:w-[680px] 4xl:h-[720px]
-              p-6 lg:px-5 lg:py-10 xl:py-12
-              3xl:px-10 3xl:py-10 
-              4xl:px-15 4xl:py-15 
-              rounded-lg shadow-lg 
-              transition-all duration-300 
-              border-2 border-transparent
-             hover:border-yellow-400
-             focus:border-yellow-400
-              mobile-m:mx-auto
-              ${
-                index % 2 === 0
-                  ? "mobile-s:ml-0  2xl:ml-[90px] 3xl:ml-[70px] 4xl:ml-[140px] xl:ml-[40px]"
-                  : "mobile-s:ml-0 2xl:ml-[10px] 3xl:ml-[10px] 4xl:ml-[30px] xl:ml-[10px]"
-              }`}
-          >
+         <div
+         key={plan.id}
+         className={`w-full 
+           mobile-s:w-[300px] 
+           mobile-m:w-[310px] 
+           mobile-l:w-[350px] 
+           lg:w-[450px] 
+           h-[480px] 
+           lg:h-[500px]
+           3xl:w-[580px] 3xl:h-[650px] 
+           4xl:w-[680px] 4xl:h-[720px]
+           p-6 lg:px-5 lg:py-10 xl:py-12
+           3xl:px-10 3xl:py-10 
+           4xl:px-15 4xl:py-15 
+           rounded-lg shadow-lg 
+           transition-all duration-300 
+           border-2 border-transparent
+           hover:border-yellow-400 focus:border-yellow-400 active:border-yellow-400
+           mobile-m:mx-auto
+           ${
+             index % 2 === 0
+               ? "mobile-s:ml-0  2xl:ml-[90px] 3xl:ml-[70px] 4xl:ml-[140px] xl:ml-[40px]"
+               : "mobile-s:ml-0 2xl:ml-[10px] 3xl:ml-[10px] 4xl:ml-[30px] xl:ml-[10px]"
+           }`}
+       >
             {/* Icon & Price */}
             <div className="flex justify-between">
               <div className="w-10 h-10 3xl:w-15 3xl:h-15 4xl:h-20 4xl:w-20 bg-white rounded-full">
