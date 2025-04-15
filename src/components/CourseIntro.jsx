@@ -52,9 +52,11 @@ const CourseIntro = () => {
           style={{
             maxWidth: "100%",
             maxHeight: "1000px",
+            pointerEvents: "none", // Prevents user interaction
           }}
-          poster="your-thumbnail-image-url.jpg"
+          onContextMenu={(e) => e.preventDefault()} // Blocks right-click
           onEnded={handleVideoEnd}
+          poster="your-thumbnail-image-url.jpg"
         >
           <source src={video1} type="video/mp4" />
           Your browser does not support the video tag.

@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { subscriptionPlans } from "../constants";
 import { subcheck, subicon } from "../assets";
 
 const Subscription = () => {
+  const [activeCard, setActiveCard] = useState(null);
+
+  // Reset active card on outside tap
+  useEffect(() => {
+    const handleOutsideTap = () => setActiveCard(null);
+    document.addEventListener("click", handleOutsideTap);
+    return () => document.removeEventListener("click", handleOutsideTap);
+  }, []);
+
   return (
     <div className="bg-black text-white py-15 px-1">
       {/* Header */}
@@ -21,8 +30,10 @@ const Subscription = () => {
         {subscriptionPlans.map((plan, index) => (
           <div
             key={plan.id}
-            style={{ touchAction: "manipulation" }}
-            tabIndex={0} // makes div focusable for focus-visible on mobile
+            onClick={(e) => {
+              e.stopPropagation(); // Prevent bubbling
+              setActiveCard(plan.id); // Highlight this card
+            }}
             className={`w-full 
               mobile-s:w-[300px] 
               mobile-m:w-[310px] 
@@ -37,10 +48,12 @@ const Subscription = () => {
               4xl:px-15 4xl:py-15 
               rounded-lg shadow-lg 
               transition-all duration-300 
-              border-2 border-transparent
-              hover:border-yellow-400 
-              active:border-yellow-400 
-              focus-visible:border-yellow-400
+              border-2
+              ${
+                activeCard === plan.id
+                  ? "border-yellow-400"
+                  : "hover:border-yellow-400 border-transparent"
+              }
               mobile-m:mx-auto
               ${
                 index % 2 === 0
@@ -66,7 +79,9 @@ const Subscription = () => {
             <h2 className="text-[25px] lg:text-[30px] 3xl:text-[40px] font-bold text-yellow-300 mt-5">
               {plan.title}
             </h2>
-            <p className="mb-4 mt-4 lg:text-[15px] 3xl:text-[20px]">{plan.description}</p>
+            <p className="mb-4 mt-4 lg:text-[15px] 3xl:text-[20px]">
+              {plan.description}
+            </p>
 
             {/* Feature List */}
             <ul className="text-sm font-semibold lg:text-[16px] 3xl:text-[20px] text-white space-y-2 lg:space-y-5 mb-4">
