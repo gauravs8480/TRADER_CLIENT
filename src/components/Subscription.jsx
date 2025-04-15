@@ -36,10 +36,9 @@ const Subscription = () => {
               4xl:px-15 4xl:py-15 
               rounded-lg shadow-lg 
               transition-all duration-300 
-              mobile-s:border-blue-600 
-              mobile-m:border-red-600 
-              mobile-l:border-white 
-              border-2 
+              border-2 border-transparent
+             hover:border-yellow-400
+             focus:border-yellow-400
               mobile-m:mx-auto
               ${
                 index % 2 === 0

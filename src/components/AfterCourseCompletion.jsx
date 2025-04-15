@@ -3,7 +3,7 @@ import { AfterCourseCard, AfterCourseCard2 } from "../constants";
 
 
 const Card = ({ card }) => (
-  <div className="border-2 border-red-300 mobile-s:h-[370px]  s:w-[344px] h-[330px] md:w-[400px] md:h-[340px]  lg:w-[400px] lg:h-[400px]  xl:w-[500px] xl:h-[500px]   3xl:w-[590px] 3xl:h-[550px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5 4xl:mb-10">
+  <div className=" mobile-s:h-[370px]  s:w-[344px] h-[330px] md:w-[400px] md:h-[340px]  lg:w-[400px] lg:h-[400px]  xl:w-[500px] xl:h-[500px]   3xl:w-[590px] 3xl:h-[550px] rounded-[20px] shadow-lg overflow-hidden relative bg-white hover:bg-yellow-400 transition-colors duration-300 flex-shrink-0 mb-5 4xl:mb-10">
     {/* Image */}
     <div className="h-[235px] lg:h-[250px] xl:h-[350px]  3xl:h-[400px] overflow-hidden px-4 pt-4 xlpx-6 xl:pt-6 3xl:px-4 3xl:pt-4 4xl:pt-6 4xl:px-6">
       <img
