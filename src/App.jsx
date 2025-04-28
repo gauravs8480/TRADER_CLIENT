@@ -39,16 +39,16 @@ const App = () => {
         <Mentor />
       </LayoutWrapper>
 
-      <LayoutWrapper>
+      {/* <LayoutWrapper>
         <CourseCompletionCertificate />
-      </LayoutWrapper>
+      </LayoutWrapper> */}
 
 
 <DiscordIntro/>
 
-<LayoutWrapper>
+{/* <LayoutWrapper>
 <CourseSyllabus/>
-</LayoutWrapper>
+</LayoutWrapper> */}
 
 <LayoutWrapper>
 <AfterCourseCompletion/>

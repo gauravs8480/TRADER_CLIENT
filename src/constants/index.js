@@ -182,14 +182,14 @@ const brandLogos = [
       features: ["All 15 chapters", "80+ hours of training", "100+ video lessons", "Community access"],
       buttonText: "Subscribe now",
     },
-    {
-      id: 4,
-      title: "Premium Plan",
-      description:"Lorem ipsum dolor  massa d amet consectetur pellentesque scelerisque fermentum bibendum ipsum massa massa ",
-      price: "$499 USD",
-      features: ["All modules unlocked", "100+ hours of training", "Unlimited lessons", "Dedicated support"],
-      buttonText: "Subscribe now",
-    },
+    // {
+    //   id: 4,
+    //   title: "Premium Plan",
+    //   description:"Lorem ipsum dolor  massa d amet consectetur pellentesque scelerisque fermentum bibendum ipsum massa massa ",
+    //   price: "$499 USD",
+    //   features: ["All modules unlocked", "100+ hours of training", "Unlimited lessons", "Dedicated support"],
+    //   buttonText: "Subscribe now",
+    // },
   ]; export { subscriptionPlans };
 
 
